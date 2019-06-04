@@ -8,6 +8,7 @@ import {CompletedComponent} from "./components/completed/components/completed.co
 import {FooterComponent} from "./components/footer/components/footer.component";
 import {GameFiltersComponent} from "./components/game-filters/components/game-filters.component";
 import {TitleComponent} from "./components/title/components/title.component";
+import {HeaderComponent} from "./components/header/components/header.component";
 const components = [
     AppNavigationMenuItemComponent,
     AvatarComponent,
@@ -21,7 +22,8 @@ const components = [
     CardComponent,
     ButtonComponent,
     AvatarComponent,
-    TitleComponent
+    TitleComponent,
+    HeaderComponent
 ];
 @NgModule({
     imports: [CommonModule],
