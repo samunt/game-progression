@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-navigation-menu-item',
@@ -7,5 +7,7 @@ import {Component} from '@angular/core';
 })
 export class AppNavigationMenuItemComponent  {
 
+  @Input()
+  public href: string = null;
 
 }

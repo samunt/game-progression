@@ -10,6 +10,7 @@ import { RouterModule } from "@angular/router";
 import {AppNavigationComponent} from "./components/app/components";
 import {GamingContentComponent} from "./components/app/components";
 import {AppRoutingModule} from "./app-routing.module";
+import { storeConfig } from 'src/app/components/app/components/app/store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {AppRoutingModule} from "./app-routing.module";
     ProfileModule,
     GamesModule,
     UiLibraryModule,
-    // StoreModule.forRoot({})
+    StoreModule.forRoot({}, storeConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

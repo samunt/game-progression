@@ -7,5 +7,5 @@ import {Component, Input} from '@angular/core';
 })
 export class AvatarComponent {
   @Input()
-  public src = 'https://avatarfiles.alphacoders.com/144/144986.jpg';
+  public src: string = null;
 }
