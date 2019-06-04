@@ -5,10 +5,11 @@ import { AppComponent } from 'src/app/components/app/components/app/app.componen
 import { StoreModule } from '@ngrx/store';
 import { ProfileModule } from "./features/profile/features/profile.module";
 import { GamesModule } from "./features/games/features/games.module";
-import {TitleModule, UiLibraryModule} from "./modules/ui-library";
+import {UiLibraryModule} from "./modules/ui-library";
 import { RouterModule } from "@angular/router";
 import {AppNavigationComponent} from "./components/app/components";
 import {GamingContentComponent} from "./components/app/components";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import {GamingContentComponent} from "./components/app/components";
   imports: [
     BrowserModule,
     RouterModule,
+    AppRoutingModule,
     ProfileModule,
     GamesModule,
     UiLibraryModule,
-    StoreModule.forRoot({})
+    // StoreModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
