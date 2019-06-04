@@ -1,6 +1,8 @@
+import {ProfileActions} from "../../../../../features/profile/store/profile.actions";
+
 export function updateEntityInArray<T extends { id?: number }>(
-    entities: T[],
-    updatedEntity: T
+    entities: string,
+    updatedEntity: ProfileActions.UpdateAccountLastName
 ): T[] {
     let updatedEntities = false;
 

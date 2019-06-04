@@ -1,12 +1,12 @@
 import { updateEntityInArray } from 'src/app/components/app/components/app/store/store.utils';
-import { createSessionState, SessionState } from '../types/Profile-state';
+import { Profile } from '../types/profile';
 
-import { ProfileActions, ProfilesActionsUnion } from './Profiles.actions';
+import { ProfileActions, ProfileActionsUnion } from './profile.actions';
 
 export function ProfileReducer(
-    state: SessionState = createSessionState(),
-    action: ProfilesActionsUnion
-): SessionState {
+    state: Profile,
+    action: ProfileActionsUnion
+): Profile {
     switch (action.type) {
         case ProfileActions.RetrieveAccount:
             return {
@@ -16,28 +16,12 @@ export function ProfileReducer(
         case ProfileActions.RetrieveAccountSuccess:
             return {
                 ...state,
-                currentAccount: action.account
+                currentAccount: action
             };
         case ProfileActions.RetrieveAccountFailure:
             return {
                 ...state,
                 error: action.error
-            };
-        case ProfileActions.UpdateAccountFirstName:
-            return {
-                ...state,
-                currentAccount: {
-                    ...state.currentAccount,
-                    phoneNumbers: updateEntityInArray(state.currentAccount.firstName, action.firstName)
-                }
-            };
-        case ProfileActions.UpdateAccountLastName:
-            return {
-                ...state,
-                currentAccount: {
-                    ...state.currentAccount,
-                    phoneNumbers: updateEntityInArray(state.currentAccount.lastName, action.lastName)
-                }
             };
 
         default:

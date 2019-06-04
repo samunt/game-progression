@@ -1,31 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { AppState } from 'src/app/types/app-state/app-state.interface';
+import { filter, map } from 'rxjs/operators';
+import { AppState } from 'src/app/components/app/components/app/types/app-state/app-state.interface';
+import {Profile} from "../types/profile";
 
 @Injectable()
-export class GameStore {
+export class ProfileStore {
     constructor(private store: Store<AppState>) {}
 
-    public getCurrentAccountFirstName(): Observable<FirstName[]> {
-        return this.getCurrentAccount().pipe(map(state => state.firstName));
+    public getSessionState(): Observable<Profile> {
+        return this.store.pipe(map(state => state.id));
     }
 
-
-    public getCurrentAccountLastName(): Observable<LastName[]> {
-        return this.getCurrentAccount().pipe(map(state => state.lastName));
+    public getCurrentAccount(): Observable<Account> {
+        return this.getSessionState().pipe(
+            map(state => state),
+            filter(Boolean)
+        );
     }
 
-    public retrieveAccount() {
-        this.store.dispatch(new RetrieveAccount());
+    public getCurrentAccountFirstName(): Observable<Account> {
+        return this.getCurrentAccount().pipe(map(state => state));
     }
 
-    public openMainNavigation() {
-        this.store.dispatch(new OpenMainNavigation());
+    public getCurrentAccountLastName(): Observable<Account> {
+        return this.getCurrentAccount().pipe(map(state => state));
     }
 
-    public closeMainNavigation() {
-        this.store.dispatch(new CloseMainNavigation());
-    }
 }

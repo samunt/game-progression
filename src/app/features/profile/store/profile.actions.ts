@@ -7,8 +7,6 @@ export enum ProfileActions {
     RetrieveAccount = 'Profile-RetrieveAccount',
     RetrieveAccountSuccess = 'Profile-RetrieveAccountSuccess',
     RetrieveAccountFailure = 'Profile-RetrieveAccountFailure',
-    UpdateAccountFirstName = 'Profile-UpdateAccountFirstName',
-    UpdateAccountLastName = 'Profile-UpdateAccountLastName'
 }
 
 export class RetrieveAccount implements Action {
@@ -27,22 +25,8 @@ export class RetrieveAccountFailure implements Action {
     constructor(public error: HttpErrorResponse) {}
 }
 
-export class UpdateAccountFirstName implements Action {
-    public readonly type = ProfileActions.UpdateAccountFirstName;
-
-    constructor(public firstName: FirstName) {}
-}
-
-export class UpdateAccountLastName implements Action {
-    public readonly type = ProfileActions.UpdateAccountLastName;
-
-    constructor(public lastName: LastName) {}
-}
-
 
 export type ProfileActionsUnion =
     | RetrieveAccount
     | RetrieveAccountSuccess
-    | RetrieveAccountFailure
-    | UpdateAccountFirstName
-    | UpdateAccountLastName;
+    | RetrieveAccountFailure;
