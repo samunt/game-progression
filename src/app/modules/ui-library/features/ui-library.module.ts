@@ -1,37 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TitleComponent } from "./title/title.component";
-import { MenuComponent } from "./menu/menu.component";
-import { LayoutComponent } from "./layout/layout.component";
-import { InputComponent } from "./input/input.component";
-import { HeaderComponent  } from "./header/header.component";
-import { GameFiltersComponent } from "./game-filters/game-filters.component";
-import { FooterComponent } from "./footer/footer.component";
-import { DashboardComponent } from "./dashboard/dashboard/dashboard.component";
-import { CompletedComponent } from "./completed/completed.component";
-import { CardComponent } from "./card/card.component";
-import { ButtonComponent } from "./button/button.component";
-import { AvatarComponent } from "./avatar/avatar.component";
-import { AppNavigationMenuItemComponent } from "./app-navigation-menu-item/app-navigation-menu-item.component";
-
+import {TitleModule} from "./title/title.module";
+import {MenuModule} from "./menu/menu.module";
+import {LayoutModule} from "./layout/layout.module";
+import {InputModule} from "./input/input.module";
+import {HeaderModule} from "./header/header.module";
+import {GameFiltersModule} from "./game-filters/game-filters.module";
+import {FooterModule} from "./footer/footer.module";
+import {CompletedModule} from "./completed/completed.module";
+import {CardModule} from "./card/card.module";
+import {ButtonModule} from "./button/button.module";
+import {AvatarModule} from "./avatar/avatar.module";
+import {AppNavigationMenuItemModule} from "./app-navigation-menu-item/app-navigation-menu-item.module";
+const modules = [
+    TitleModule,
+    // MenuModule,
+    // LayoutModule,
+    // InputModule,
+    // HeaderModule,
+    // GameFiltersModule,
+    // FooterModule,
+    // CompletedModule,
+    // CardModule,
+    // ButtonModule,
+    // AvatarModule,
+    // AppNavigationMenuItemModule
+];
 @NgModule({
-    declarations: [
-        TitleComponent,
-        MenuComponent,
-        LayoutComponent,
-        InputComponent,
-        HeaderComponent,
-        GameFiltersComponent,
-        FooterComponent,
-        DashboardComponent,
-        CompletedComponent,
-        CardComponent,
-        ButtonComponent,
-        AvatarComponent,
-        AppNavigationMenuItemComponent,
-    ],
-    imports: [
-        CommonModule
-    ]
+    imports: [CommonModule, ...modules],
+    exports: modules
 })
-export class UiLibraryModule { }
+export class UiLibraryModule {}
