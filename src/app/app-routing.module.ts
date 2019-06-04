@@ -7,9 +7,10 @@ const routes: Routes = [
     redirectTo: 'profile-details',
     pathMatch: 'full'
   },
-  { path: 'profile-details', loadChildren: 'src/app/features/profile/features/profile-details/components/profile-details.module.ts#ProfileDetailsModule' },
-  { path: 'edit-profile', loadChildren: 'src/app/features/profile/features/edit-profile/edit-profile.module.ts#EditProfileModule' },
-  { path: 'add-game', loadChildren: './features/session/session.module#SessionModule' }
+  { path: 'profile-details', loadChildren: './features/profile/features/profile-details/profile-details.module#ProfileDetailsModule' },
+  { path: 'edit-profile', loadChildren: 'src/app/features/profile/features/edit-profile/edit-profile.module#EditProfileModule' },
+  { path: 'add-game', loadChildren: 'src/app/features/games/features/add-game/components/add-game.module.ts#AddGameModule' },
+  { path: 'edit-game', loadChildren: 'src/app/features/games/features/edit-game/components/edit-game.module.ts#EditGameModule' }
 ];
 
 @NgModule({

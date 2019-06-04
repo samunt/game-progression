@@ -8,7 +8,7 @@ import {EditGameModule} from "./edit-game/components/edit-game.module";
   imports: [
     CommonModule,
     AddGameModule,
-    EditGameModule
+    EditGameModule,
   ]
 })
 export class GamesModule { }
