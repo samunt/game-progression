@@ -5,7 +5,7 @@ import { AppComponent } from 'src/app/components/app/components/app/app.componen
 import { StoreModule } from '@ngrx/store';
 import { ProfileModule } from "./features/profile/features/profile.module";
 import { GamesModule } from "./features/games/features/games.module";
-import { UiLibraryModule } from "./modules/ui-library/features";
+import {TitleModule, UiLibraryModule} from "./modules/ui-library/features";
 import { RouterModule } from "@angular/router";
 import {AppNavigationComponent} from "./components/app/components";
 import {GamingContentComponent} from "./components/app/components";
