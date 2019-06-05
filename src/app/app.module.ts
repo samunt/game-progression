@@ -11,6 +11,8 @@ import {AppNavigationComponent} from "./components/app/components";
 import {GamingContentComponent} from "./components/app/components";
 import {AppRoutingModule} from "./app-routing.module";
 import { storeConfig } from 'src/app/components/app/components/app/store/app.reducer';
+import {DataService} from "./services";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -25,9 +27,10 @@ import { storeConfig } from 'src/app/components/app/components/app/store/app.red
     ProfileModule,
     GamesModule,
     UiLibraryModule,
+    HttpClientModule,
     StoreModule.forRoot({}, storeConfig)
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
