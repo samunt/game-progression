@@ -5,8 +5,8 @@ import { Profile } from '../types/profile';
 
 export enum ProfileActions {
     RetrieveProfile = 'Profile-RetrieveProfile',
-    RetrieveAccountSuccess = 'Profile-RetrieveAccountSuccess',
-    RetrieveAccountFailure = 'Profile-RetrieveAccountFailure',
+    RetrieveProfileSuccess = 'Profile-RetrieveAccountSuccess',
+    RetrieveProfileFailure = 'Profile-RetrieveAccountFailure',
 }
 
 export class RetrieveProfile implements Action {
@@ -14,13 +14,13 @@ export class RetrieveProfile implements Action {
 }
 
 export class RetrieveProfileSuccess implements Action {
-    public readonly type = ProfileActions.RetrieveAccountSuccess;
+    public readonly type = ProfileActions.RetrieveProfileSuccess;
 
     constructor(public profile: Profile) {}
 }
 
 export class RetrieveProfileFailure implements Action {
-    public readonly type = ProfileActions.RetrieveAccountFailure;
+    public readonly type = ProfileActions.RetrieveProfileFailure;
 
     constructor(public error: HttpErrorResponse) {}
 }

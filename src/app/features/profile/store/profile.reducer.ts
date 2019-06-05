@@ -1,9 +1,10 @@
 import { Profile } from '../types/profile';
 
 import { ProfileActions, ProfileActionsUnion } from './profile.actions';
+import {createProfileState} from "../types/profile-state/profile-state.functions";
 
 export function ProfileReducer(
-    state: Profile,
+    state: Profile = createProfileState(),
     action: ProfileActionsUnion
 ): Profile {
     switch (action.type) {
@@ -11,14 +12,15 @@ export function ProfileReducer(
             return {
                 ...state
             };
-        case ProfileActions.RetrieveAccountSuccess:
+        case ProfileActions.RetrieveProfileSuccess:
             return {
                 ...state,
-                id: state.id
+                id: action.profile.id
             };
-        case ProfileActions.RetrieveAccountFailure:
+        case ProfileActions.RetrieveProfileFailure:
             return {
-                ...state
+                ...state,
+                error: action.error
             };
 
         default:

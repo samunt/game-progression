@@ -12,7 +12,9 @@ import {GamingContentComponent} from "./components/app/components";
 import {AppRoutingModule} from "./app-routing.module";
 import { storeConfig } from 'src/app/components/app/components/app/store/app.reducer';
 import {DataService} from "./services";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {EffectsModule} from "@ngrx/effects";
+import {HttpClientModule} from "@angular/common/http";
+import {ProfileStore} from "./features/profile/store/profile.store";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     GamesModule,
     UiLibraryModule,
     HttpClientModule,
-    StoreModule.forRoot({}, storeConfig)
+    StoreModule.forRoot({}, storeConfig),
+    EffectsModule.forRoot([])
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

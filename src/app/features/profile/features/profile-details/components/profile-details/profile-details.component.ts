@@ -1,8 +1,5 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
 import {ProfileStore} from "../../../../store/profile.store";
-import {DataService} from 'src/app/services/DataService.service';
-import {Observable} from "rxjs";
-import {Profile} from "../../../../types/profile/profile.interface";
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -11,10 +8,10 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./profile-details.component.scss']
 })
 export class ProfileDetailsComponent implements OnInit{
-  constructor(public dataService: DataService){}
+  constructor(public http: HttpClient, public profileStore: ProfileStore){}
   ngOnInit(): void {
-    let users = this.dataService.getProfile();
-    console.log('FIRED', users);
+    let users = this.profileStore.getProfileState();
+    console.log('users', users);
   }
 
 }
