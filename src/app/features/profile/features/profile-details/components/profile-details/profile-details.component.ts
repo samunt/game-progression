@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {ProfileStore} from "../../../../store/profile.store";
 import {DataService} from 'src/app/services/DataService.service';
 import {Observable} from "rxjs";
@@ -12,9 +12,7 @@ import {Profile} from "../../../../types/profile/profile.interface";
 export class ProfileDetailsComponent implements OnInit{
   ngOnInit(): void {
     const users = DataService.getProfile();
-    console.log(users);
-    // users.
-    // ProfileStore
+    console.log('FIRED')
   }
 
 }

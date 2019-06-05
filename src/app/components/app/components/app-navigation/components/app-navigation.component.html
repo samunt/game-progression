@@ -1,8 +1,12 @@
 <app-header>
-    <app-title>Game Progression</app-title>
+    <div class="container">
+        <app-title>Game Progression</app-title>
+        <app-avatar [src]="src"></app-avatar>
+        <p>Sam Unterman</p>
+    </div>
 </app-header>
-<app-navigation-menu-item href="profile-details">Dashboard</app-navigation-menu-item>
-<app-navigation-menu-item href="edit-game">Games</app-navigation-menu-item>
-<app-avatar [src]="src"></app-avatar>
-<p>Sam Unterman</p>
+<div class="nav-container">
+    <app-navigation-menu-item href="profile-details">Dashboard</app-navigation-menu-item>
+    <app-navigation-menu-item href="edit-game">Games</app-navigation-menu-item>
+</div>
 <app-footer></app-footer>
