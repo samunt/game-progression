@@ -3,7 +3,7 @@ import { ofType, Actions, Effect } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, filter, map, mergeMap } from 'rxjs/operators';
 import {ProfileActions, RetrieveProfile, RetrieveProfileFailure, RetrieveProfileSuccess} from "./profile.actions";
-import {DataService} from "../../../services/DataService.service";
+import {DataService} from "../../../services";
 
 @Injectable()
 export class ProfileEffects {
@@ -17,7 +17,7 @@ export class ProfileEffects {
         ofType(ProfileActions.RetrieveProfile),
         mergeMap(() =>
             this.dataService.getProfile().pipe(
-                map(account => new RetrieveProfileSuccess(account)),
+                map(profile => new RetrieveProfileSuccess(profile)),
                 catchError(error => of(new RetrieveProfileFailure(error)))
             )
         )
