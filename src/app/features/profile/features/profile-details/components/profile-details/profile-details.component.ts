@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfileStore} from "../../../../store/profile.store";
-import {DataService} from "../../../../../../services/DataService.service";
+import {DataService} from 'src/app/services/DataService.service';
+import {Observable} from "rxjs";
+import {Profile} from "../../../../types/profile/profile.interface";
 
 @Component({
   selector: 'app-profile-details',

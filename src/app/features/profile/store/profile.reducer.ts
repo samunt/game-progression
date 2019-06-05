@@ -1,4 +1,3 @@
-import { updateEntityInArray } from 'src/app/components/app/components/app/store/store.utils';
 import { Profile } from '../types/profile';
 
 import { ProfileActions, ProfileActionsUnion } from './profile.actions';
@@ -8,20 +7,18 @@ export function ProfileReducer(
     action: ProfileActionsUnion
 ): Profile {
     switch (action.type) {
-        case ProfileActions.RetrieveAccount:
+        case ProfileActions.RetrieveProfile:
             return {
-                ...state,
-                error: null
+                ...state
             };
         case ProfileActions.RetrieveAccountSuccess:
             return {
                 ...state,
-                currentAccount: action
+                id: state.id
             };
         case ProfileActions.RetrieveAccountFailure:
             return {
-                ...state,
-                error: action.error
+                ...state
             };
 
         default:

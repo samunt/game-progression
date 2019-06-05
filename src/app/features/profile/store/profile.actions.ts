@@ -4,22 +4,22 @@ import { Profile } from '../types/profile';
 
 
 export enum ProfileActions {
-    RetrieveAccount = 'Profile-RetrieveAccount',
+    RetrieveProfile = 'Profile-RetrieveProfile',
     RetrieveAccountSuccess = 'Profile-RetrieveAccountSuccess',
     RetrieveAccountFailure = 'Profile-RetrieveAccountFailure',
 }
 
-export class RetrieveAccount implements Action {
-    public readonly type = ProfileActions.RetrieveAccount;
+export class RetrieveProfile implements Action {
+    public readonly type = ProfileActions.RetrieveProfile;
 }
 
-export class RetrieveAccountSuccess implements Action {
+export class RetrieveProfileSuccess implements Action {
     public readonly type = ProfileActions.RetrieveAccountSuccess;
 
     constructor(public profile: Profile) {}
 }
 
-export class RetrieveAccountFailure implements Action {
+export class RetrieveProfileFailure implements Action {
     public readonly type = ProfileActions.RetrieveAccountFailure;
 
     constructor(public error: HttpErrorResponse) {}
@@ -27,6 +27,6 @@ export class RetrieveAccountFailure implements Action {
 
 
 export type ProfileActionsUnion =
-    | RetrieveAccount
-    | RetrieveAccountSuccess
-    | RetrieveAccountFailure;
+    | RetrieveProfile
+    | RetrieveProfileSuccess
+    | RetrieveProfileFailure;
