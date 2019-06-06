@@ -1,19 +1,13 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "firstName": "Sam",
+      "lastName": "Unterman",
+      "avatar": "https://avatarfiles.alphacoders.com/144/144986.jpg",
+      "avgNumHrs": 2,
+      "currentAccount": true,
+      "error": null
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

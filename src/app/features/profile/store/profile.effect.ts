@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ofType, Actions, Effect } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { catchError, filter, map, mergeMap } from 'rxjs/operators';
-import {ProfileActions, RetrieveProfile, RetrieveProfileFailure, RetrieveProfileSuccess} from "./profile.actions";
+import { catchError, map, mergeMap } from 'rxjs/operators';
+import {ProfileActions, RetrieveProfileFailure, RetrieveProfileSuccess} from "./profile.actions";
 import {DataService} from "../../../services";
 
 @Injectable()

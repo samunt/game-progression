@@ -16,9 +16,7 @@ export class DataService {
             "avgNum" : 5
         };
 
-        const a = this.httpClient.post(`/users`, newcust);
-        console.log('lol',a)
         return this.httpClient
-            .get<Profile>(`/users`);
+            .get<Profile>(`/users/1`);
     }
 }
