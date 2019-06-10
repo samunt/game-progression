@@ -8,4 +8,6 @@ export interface Profile {
     avatar: string;
     avgNumHrs: number;
     error: HttpErrorResponse;
+    games: Array<any>;
+    platforms: Array<any>;
 }

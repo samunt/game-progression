@@ -2,11 +2,38 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Samnnnnnn",
-      "lastName": "Unterman",
+      "firstName": "James",
+      "lastName": "Cameron",
       "avatar": "https://avatarfiles.alphacoders.com/144/144986.jpg",
-      "avgNumHrs": 2,
-      "error": null
+      "avgNumHrs": "8978",
+      "error": null,
+      "games": [
+        {
+          "id": 1,
+          "name": "Super Mario",
+          "platform": 1,
+          "estComp": 60,
+          "compDate": null
+        }
+      ],
+      "platforms": [
+        {
+          "id": 1,
+          "platform": "Switch"
+        },
+        {
+          "id": 2,
+          "platform": "N64"
+        },
+        {
+          "id": 3,
+          "platform": "PS4"
+        },
+        {
+          "id": 5,
+          "platform": "Xbox"
+        }
+      ]
     }
   ]
 }
