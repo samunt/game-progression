@@ -30,6 +30,8 @@ export class RetrieveProfileFailure implements Action {
 
 export class EditProfile implements Action {
     public readonly type = ProfileActions.EditProfile;
+
+    constructor(public profile: Profile) {}
 }
 
 export class EditProfileSuccess implements  Action {

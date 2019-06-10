@@ -8,7 +8,7 @@ export class DataService {
     constructor(private httpClient: HttpClient) {}
     public getProfile(): Observable<Profile> {
         return this.httpClient
-            .get<Profile>(`/users/1`);
+            .get<Profile>(`/users`);
     }
 
     public updateProfile(payload): Observable<Profile> {
