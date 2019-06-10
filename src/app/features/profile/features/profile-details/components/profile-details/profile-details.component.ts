@@ -30,7 +30,7 @@ export class ProfileDetailsComponent{
 
   constructor(public dataService: DataService, private router: Router) {
     this.subscription = this.dataService.getProfile().subscribe(profile => {
-      this.profile = profile[0];
+      this.profile = profile;
       this.src = this.profile.avatar;
       this.firstName = this.profile.firstName;
       this.lastName = this.profile.lastName;

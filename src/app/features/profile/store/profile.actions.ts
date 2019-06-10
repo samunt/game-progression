@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Action } from '@ngrx/store';
 import { Profile } from '../types/profile';
+import {FormGroup} from "@angular/forms";
 
 
 export enum ProfileActions {

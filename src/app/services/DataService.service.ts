@@ -13,6 +13,6 @@ export class DataService {
 
     public updateProfile(payload): Observable<Profile> {
         return this.httpClient
-            .put<Profile>('/users/1', payload)
+            .post<Profile>('/users', payload)
     }
 }

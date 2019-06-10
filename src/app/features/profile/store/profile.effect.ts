@@ -32,7 +32,7 @@ export class ProfileEffects {
         ofType(ProfileActions.EditProfile),
         tap(console.log),
         switchMap(() =>
-            this.dataService.updateProfile('lorem').pipe(
+            this.dataService.updateProfile(payload).pipe(
                 map( profile => new EditProfileSuccess(profile)),
                 catchError( error => of(new EditProfileFailure(error)))
             ),

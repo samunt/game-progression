@@ -4,6 +4,7 @@ import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 import { ProfileStore } from "../../../../store/profile.store";
+import {Profile} from "../../../../types/profile";
 
 @Component({
   selector: 'app-edit-profile',
@@ -12,8 +13,8 @@ import { ProfileStore } from "../../../../store/profile.store";
 })
 export class EditProfileComponent {
   subscription: Subscription;
-  profile: any;
   public form: FormGroup;
+  public profile: Profile;
   @Input()
   public src: string = null;
 
@@ -36,7 +37,7 @@ export class EditProfileComponent {
   constructor(public dataService: DataService, private router: Router, private store: ProfileStore) {
 
     this.subscription = this.dataService.getProfile().subscribe(profile => {
-      this.profile = profile[0];
+      this.profile = profile;
       this.form = new FormGroup({
         firstName: new FormControl(this.profile.firstName),
         lastName: new FormControl(this.profile.lastName),
@@ -58,6 +59,11 @@ export class EditProfileComponent {
 
 
   public submitForm(form: FormGroup) {
-    this.store.editProfileState(form)
+    this.form = form;
+    this.profile.avatar = this.form.controls.avatar.value;
+    this.profile.firstName = this.form.controls.firstName.value;
+    this.profile.lastName = this.form.controls.lastName.value;
+    this.profile.avgNumHrs = this.form.controls.avgNumHrs.value;
+    this.store.editProfileState(this.profile)
   }
 }
