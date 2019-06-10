@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {UiLibraryModule} from "../../../../modules/ui-library";
+import {UiLibraryModule} from "../../modules/ui-library";
 
 @NgModule({
    imports: [UiLibraryModule],

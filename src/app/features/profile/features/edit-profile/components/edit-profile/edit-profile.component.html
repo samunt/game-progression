@@ -1,3 +1,25 @@
-<p>
-  edit-profile works!
-</p>
+<h2>Edit Profile</h2>
+<app-button (click)="press()">View Profile</app-button>
+
+
+<form *ngIf="form"
+      [formGroup]="form">
+  <label>First Name
+    <input formControlName="firstName" />
+  </label>
+  <br>
+  <label>Last Name
+    <input formControlName="lastName" />
+  </label>
+  <br>
+  <label>Avatar
+    <input formControlName="avatar" />
+  </label>
+  <br>
+  <label>Avg Number of Hours
+    <input formControlName="avgNumHrs" />
+  </label>
+  <br>
+  <app-button (click)="submitForm(form)">SUBMIT</app-button>
+</form>
+

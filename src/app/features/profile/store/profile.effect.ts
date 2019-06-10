@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ofType, Actions, Effect } from '@ngrx/effects';
 import { of } from 'rxjs';
-import {catchError, map, mergeMap, switchMap} from 'rxjs/operators';
-import {ProfileActions, RetrieveProfileFailure, RetrieveProfileSuccess} from "./profile.actions";
+import {catchError, map, switchMap, tap} from 'rxjs/operators';
+import {EditProfileSuccess, ProfileActions, RetrieveProfileFailure, RetrieveProfileSuccess, EditProfileFailure} from "./profile.actions";
 import {DataService} from "../../../services";
 
 @Injectable()
@@ -15,6 +15,7 @@ export class ProfileEffects {
     retrieveProfile$ = this.actions$.pipe(
         // filter out the actions, except '[Retrieve Profile] Get'
         ofType(ProfileActions.RetrieveProfile),
+        tap(console.log),
         switchMap(() =>
             //call service
             this.dataService.getProfile().pipe(
@@ -25,4 +26,18 @@ export class ProfileEffects {
             ),
         ),
     );
+
+    @Effect()
+    editProfile = this.actions$.pipe(
+        ofType(ProfileActions.EditProfile),
+        tap(console.log),
+        switchMap(() =>
+            this.dataService.updateProfile('lorem').pipe(
+                map( profile => new EditProfileSuccess(profile)),
+                catchError( error => of(new EditProfileFailure(error)))
+            ),
+        ),
+    );
+
+
 }

@@ -1,6 +1,5 @@
 /* tslint:disable:no-any */
 import { ActionReducer } from '@ngrx/store';
-import { localStorageSync } from 'ngrx-store-localstorage';
 import { storeLogger } from 'ngrx-store-logger';
 
 import { environment } from 'src/environments/environment';
@@ -12,13 +11,6 @@ export function logger(reducer: ActionReducer<AppState>): any {
     })(reducer);
 }
 
-export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
-    return localStorageSync({
-        keys: [],
-        rehydrate: true
-    })(reducer);
-}
-
 export const storeConfig = {
-    metaReducers: [].concat(environment.production ? [] : [logger]).concat([localStorageSyncReducer])
+    metaReducers: (environment.production ? [] : [logger])
 };

@@ -10,4 +10,9 @@ export class DataService {
         return this.httpClient
             .get<Profile>(`/users/1`);
     }
+
+    public updateProfile(payload): Observable<Profile> {
+        return this.httpClient
+            .put<Profile>('/users/1', payload)
+    }
 }

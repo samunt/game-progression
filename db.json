@@ -1,13 +1,10 @@
 {
   "users": [
     {
-      "id": 1,
       "firstName": "Sam",
       "lastName": "Unterman",
       "avatar": "https://avatarfiles.alphacoders.com/144/144986.jpg",
-      "avgNumHrs": 2,
-      "currentAccount": true,
-      "error": null
+      "avgNumHrs": 2
     }
   ]
 }

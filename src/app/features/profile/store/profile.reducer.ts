@@ -1,6 +1,5 @@
-import { ProfileActions, ProfileActionsUnion } from './profile.actions';
-import {createProfileState} from "../types/profile-state";
-import {ProfileState} from "../types/profile-state";
+import {ProfileActions, ProfileActionsUnion} from './profile.actions';
+import {createProfileState, ProfileState} from "../types/profile-state";
 
 export function ProfileReducer(
     state: ProfileState = createProfileState(),
@@ -23,6 +22,22 @@ export function ProfileReducer(
                 error: action.error
             };
 
+        case ProfileActions.EditProfile:
+            return {
+                ...state,
+                error: null
+            };
+        case ProfileActions.EditProfileSuccess:
+            return {
+                error: undefined, isLoading: false,
+                ...state,
+                profile: action.profile
+            };
+        case ProfileActions.EditProfileFailure:
+            return {
+                ...state,
+                error: action.error
+            };
         default:
             return state;
     }
