@@ -4,7 +4,8 @@
       "firstName": "Sam",
       "lastName": "Unterman",
       "avatar": "https://avatarfiles.alphacoders.com/144/144986.jpg",
-      "avgNumHrs": 2
+      "avgNumHrs": 2,
+      "error": null
     }
   ]
 }

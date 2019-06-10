@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ofType, Actions, Effect } from '@ngrx/effects';
 import { of } from 'rxjs';
-import {catchError, map, switchMap, tap} from 'rxjs/operators';
-import {EditProfileSuccess, ProfileActions, RetrieveProfileFailure, RetrieveProfileSuccess, EditProfileFailure} from "./profile.actions";
+import {catchError, map, switchMap, tap, withLatestFrom} from 'rxjs/operators';
+import {
+    EditProfileSuccess,
+    ProfileActions,
+    RetrieveProfileFailure,
+    RetrieveProfileSuccess,
+    EditProfileFailure,
+} from "./profile.actions";
 import {DataService} from "../../../services";
 
 @Injectable()
@@ -31,8 +37,8 @@ export class ProfileEffects {
     editProfile = this.actions$.pipe(
         ofType(ProfileActions.EditProfile),
         tap(console.log),
-        switchMap(() =>
-            this.dataService.updateProfile(payload).pipe(
+        switchMap((action) =>
+            this.dataService.updateProfile(action.profile).pipe(  //<---- doesnt know what the payload is...
                 map( profile => new EditProfileSuccess(profile)),
                 catchError( error => of(new EditProfileFailure(error)))
             ),

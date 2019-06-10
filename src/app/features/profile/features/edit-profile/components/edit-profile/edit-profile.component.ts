@@ -37,8 +37,9 @@ export class EditProfileComponent {
   constructor(public dataService: DataService, private router: Router, private store: ProfileStore) {
 
     this.subscription = this.dataService.getProfile().subscribe(profile => {
-      this.profile = profile;
+      this.profile = profile[0];
       this.form = new FormGroup({
+        id: new FormControl(this.profile.id),
         firstName: new FormControl(this.profile.firstName),
         lastName: new FormControl(this.profile.lastName),
         avatar: new FormControl(this.profile.avatar),

@@ -4,6 +4,10 @@
 
 <form *ngIf="form"
       [formGroup]="form">
+  <label>ID
+    <input disabled formControlName="id"/>
+  </label>
+  <br>
   <label>First Name
     <input formControlName="firstName" />
   </label>
