@@ -1,9 +1,17 @@
 import {Injectable} from "@angular/core";
 import {Actions, Effect, ofType} from "@ngrx/effects";
 import {DataService} from "../../../services";
-import {GameActions, RetrieveGamesFailure, RetrieveGamesSuccess} from "../../games/store/game.actions";
+import {
+    AddGameFailure,
+    AddGameSuccess,
+    GameActions,
+    RetrieveGamesFailure,
+    RetrieveGamesSuccess, UpdateGameListFailure,
+    UpdateGameListSuccess
+} from "../../games/store/game.actions";
 import {catchError, map, switchMap, tap} from "rxjs/operators";
 import {of} from "rxjs";
+import {EditProfileFailure, EditProfileSuccess, ProfileActions} from "../../profile/store/profile.actions";
 
 @Injectable()
 export class GameEffects {
@@ -26,5 +34,29 @@ export class GameEffects {
                 catchError(error => of(new RetrieveGamesFailure(error)))
             ),
         ),
-    )
+    );
+
+    @Effect()
+    addGame = this.actions$.pipe(
+        ofType(GameActions.AddGame),
+        tap(console.log),
+        switchMap((action) =>
+            this.dataService.addGame(action.game).pipe(
+                map( game => new AddGameSuccess(game)),
+                catchError( error => of(new AddGameFailure(error)))
+            ),
+        ),
+    );
+
+    // @Effect()
+    // editGameList = this.actions$.pipe(
+    //     ofType(GameActions.UpdateGameList),
+    //     tap(console.log),
+    //     switchMap((action) =>
+    //         this.dataService.updateProfile(action.gameList).pipe(
+    //             map( gameList => new UpdateGameListSuccess(gameList[0].games)),
+    //             catchError( error => of(new UpdateGameListFailure(error)))
+    //         ),
+    //     ),
+    // );
 }

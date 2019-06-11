@@ -1,3 +1,34 @@
-<p>
-  add-game works!
-</p>
+<h2>Add Game</h2>
+  <app-button>Save</app-button>
+  <app-button>Cancel</app-button>
+
+<app-card>
+  <form *ngIf="form"
+        [formGroup]="form">
+    <label>ID
+      <input formControlName="id" disabled/>
+    </label>
+    <br>
+    <label>Name
+      <input formControlName="name" />
+    </label>
+    <br>
+    <label>Image URL
+      <input formControlName="imageURL" />
+    </label>
+    <br>
+    <label>Platform
+      <input formControlName="platform" />
+    </label>
+    <br>
+    <label>Number of Hours to Complete
+      <input formControlName="numHrsComplete" />
+    </label>
+    <br>
+    <label>Priority
+      <input formControlName="priority" />
+    </label>
+
+    <app-button (click)="submitForm(form)">SUBMIT</app-button>
+  </form>
+</app-card>

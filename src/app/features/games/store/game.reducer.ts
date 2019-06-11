@@ -22,22 +22,36 @@ export function GameReducer(
                 error: action.error
             };
 
-        // case GameActions.EditGame:
-        //     return {
-        //         ...state,
-        //         error: null
-        //     };
-        // case GameActions.EditGameSuccess:
-        //     return {
-        //         error: undefined, isLoading: false,
-        //         ...state,
-        //         Game: action.Game
-        //     };
-        // case GameActions.EditGameFailure:
-        //     return {
-        //         ...state,
-        //         error: action.error
-        //     };
+        case GameActions.UpdateGameList:
+            return {
+                ...state,
+                error: null
+            };
+        case GameActions.UpdateGameListSuccess:
+            return {
+                ...state,
+                game: action.gameList[0]
+            };
+        case GameActions.UpdateGameListFailure:
+            return {
+                ...state,
+                error: action.error
+            };
+        case GameActions.AddGame:
+            return {
+                ...state,
+                error: null
+            };
+        case GameActions.AddGameSuccess:
+            return {
+                ...state,
+                game: action.game
+            };
+        case GameActions.AddGameFailure:
+            return {
+                ...state,
+                error: action.error
+            };
         default:
             return state;
     }

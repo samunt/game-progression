@@ -22,7 +22,7 @@ export class AppNavigationComponent {
 
   constructor(public dataService: DataService) {
       this.subscription = this.dataService.getProfile().subscribe(profile => {
-          this.profile = profile;
+          this.profile = profile[0];
           this.src = this.profile.avatar;
           this.firstName = this.profile.firstName;
           this.lastName = this.profile.lastName;

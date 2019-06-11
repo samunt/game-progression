@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/types/app-state/app-state.interface';
-import {RetrieveGames} from "./game.actions";
+import {AddGame, RetrieveGames, UpdateGameList} from "./game.actions";
 import {FormGroup} from "@angular/forms";
 import {Game} from "../types/games";
+
+
 
 @Injectable()
 export class GameStore {
@@ -13,7 +15,11 @@ export class GameStore {
         return this.store.dispatch(new RetrieveGames() )
     }
 
-    // public editProfileState(profile: Profile): void {
-    //     return this.store.dispatch(new EditProfile(profile))
-    // }
+    public updateGameListState(gameList: Array<Game>): void {
+        return this.store.dispatch(new UpdateGameList(gameList))
+    }
+
+    public addGame(game: Game): void {
+        return this.store.dispatch(new AddGame(game))
+    }
 }

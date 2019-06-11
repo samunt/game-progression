@@ -1,7 +1,8 @@
 export interface Game {
-    id: number;
+    id: string;
     name: string;
-    system: string;
+    platformId: number;
+    platformName: string;
     estCompleted: number;
     compDate: Date;
 }

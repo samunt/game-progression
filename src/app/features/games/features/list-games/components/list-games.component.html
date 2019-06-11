@@ -1,10 +1,11 @@
 <h1>list games</h1>
+<app-button (click)="addGame()">Add Game</app-button>
 <app-card [attr.backgroundColor]="color">
     <li>
         <ul *ngFor="let game of gameList">
             <li>{{game.id}}</li>
             <li>{{game.name}}</li>
-            <li>{{game.platform}}</li>
+            <li>{{game.platformName}}</li>
         </ul>
     </li>
 </app-card>

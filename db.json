@@ -2,38 +2,109 @@
   "users": [
     {
       "id": 1,
-      "firstName": "James",
-      "lastName": "Cameron",
+      "firstName": "Sam",
+      "lastName": "Unterman",
       "avatar": "https://avatarfiles.alphacoders.com/144/144986.jpg",
-      "avgNumHrs": "8978",
-      "error": null,
-      "games": [
-        {
-          "id": 1,
-          "name": "Super Mario",
-          "platform": 1,
-          "estComp": 60,
-          "compDate": null
-        }
-      ],
-      "platforms": [
-        {
-          "id": 1,
-          "platform": "Switch"
-        },
-        {
-          "id": 2,
-          "platform": "N64"
-        },
-        {
-          "id": 3,
-          "platform": "PS4"
-        },
-        {
-          "id": 5,
-          "platform": "Xbox"
-        }
-      ]
+      "avgNumHrs": 2,
+      "error": null
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Super Mario",
+      "platform": 1,
+      "platformName": null,
+      "estComp": 60,
+      "compDate": null
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Yoshi and Friends",
+      "platform": 2,
+      "platformName": null,
+      "estComp": 80,
+      "compDate": null
+    },
+    {
+      "id": 89,
+      "name": "kjnkjn",
+      "platformId": null,
+      "platformName": null,
+      "estCompleted": null,
+      "compDate": null,
+      "imageURL": "",
+      "platform": "",
+      "numHrsComplete": null,
+      "priority": null
+    },
+    {
+      "id": "7mmojqwavsujws5bkiv",
+      "name": "mario kart",
+      "platformId": null,
+      "platformName": null,
+      "estCompleted": null,
+      "compDate": null,
+      "imageURL": "google.com",
+      "platform": "n64",
+      "numHrsComplete": 50,
+      "priority": 1
+    },
+    {
+      "id": "79zoix2ez22jws5d0qc",
+      "name": "Mario Bros",
+      "platformId": null,
+      "platformName": null,
+      "estCompleted": null,
+      "compDate": null,
+      "imageURL": "gmail.com",
+      "platform": "switch",
+      "numHrsComplete": 390,
+      "priority": 3
+    },
+    {
+      "id": "d9t4y6qs0ajws5ewdn",
+      "name": "knjkn",
+      "platformId": null,
+      "platformName": null,
+      "estCompleted": null,
+      "compDate": null,
+      "imageURL": "",
+      "platform": "",
+      "numHrsComplete": null,
+      "priority": null
+    },
+    {
+      "id": "3g5hz234e1ojws5fket",
+      "name": "",
+      "platformId": null,
+      "platformName": null,
+      "estCompleted": null,
+      "compDate": null,
+      "imageURL": "",
+      "platform": "",
+      "numHrsComplete": null,
+      "priority": null
+    }
+  ],
+  "platforms": [
+    {
+      "id": 1,
+      "platform": "Switch"
+    },
+    {
+      "id": 2,
+      "platform": "N64"
+    },
+    {
+      "id": 3,
+      "platform": "PS4"
+    },
+    {
+      "id": 5,
+      "platform": "Xbox"
     }
   ]
 }

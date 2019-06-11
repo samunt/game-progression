@@ -12,7 +12,16 @@
           "id": 1,
           "name": "Super Mario",
           "platform": 1,
+          "platformName": null,
           "estComp": 60,
+          "compDate": null
+        },
+        {
+          "id": 2,
+          "name": "Yoshi and Friends",
+          "platform": 2,
+          "platformName": null,
+          "estComp": 80,
           "compDate": null
         }
       ],
