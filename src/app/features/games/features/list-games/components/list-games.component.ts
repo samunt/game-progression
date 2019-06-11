@@ -33,7 +33,7 @@ export class ListGamesComponent {
                 _.forEach(platformList, function(platform: Platform){
                     //grab platform that has an id that matches an id from the list of platforms in db
                     //return the string belonging to the platform list
-                    if (game.platformId === platform.id) {
+                    if (game.platform === platform.id) {
                         game.platformName = platform.platform
                     }
                 });

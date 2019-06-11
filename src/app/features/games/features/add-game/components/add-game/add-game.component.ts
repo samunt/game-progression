@@ -1,7 +1,6 @@
 import { Component} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {GameStore} from "../../../../store/game.store";
-import * as _ from 'lodash';
 import {Game} from "../../../../types/games";
 import {Router} from "@angular/router";
 @Component({
@@ -22,6 +21,7 @@ export class AddGameComponent  {
       numHrsComplete: new FormControl(''),
       priority: new FormControl('')
     });
+    //generate unique game id
     let hash = Math.random().toString(36).substring(2) + (new Date()).getTime().toString(36);
     this.form['controls']['id'].setValue(hash);
   }
@@ -46,6 +46,7 @@ export class AddGameComponent  {
           game[e] = formController[e].value
       );
     };
+
     newGame(form.controls);
     this.store.addGame(game);
     this.router.navigate(['/list-games']);

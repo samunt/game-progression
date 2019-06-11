@@ -7,7 +7,7 @@
     "target": "http://localhost:3000",
     "secure": false
   },
-  "/profiles": {
+  "/platforms": {
     "target": "http://localhost:3000",
     "secure": false
   }
