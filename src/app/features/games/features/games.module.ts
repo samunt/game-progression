@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {AddGameModule} from "./add-game/add-game.module";
-import {EditGameModule} from "./edit-game/components/edit-game.module";
+import {EditGameModule} from "./edit-game/edit-game.module";
 import {ListGamesModule} from "./list-games/list-games.module";
 import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";

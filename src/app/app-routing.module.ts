@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'edit-profile', loadChildren: 'src/app/features/profile/features/edit-profile/edit-profile.module#EditProfileModule' },
   { path: 'list-games', loadChildren: 'src/app/features/games/features/list-games/list-games.module#ListGamesModule' },
   { path: 'add-game', loadChildren: 'src/app/features/games/features/add-game/add-game.module#AddGameModule' },
-  // { path: 'edit-game', loadChildren: 'src/app1/features/games/features/edit-game/components/edit-game.module#EditGameModule' }
+  { path: 'edit-game', loadChildren: 'src/app/features/games/features/edit-game/edit-game.module#EditGameModule' }
 ];
 
 @NgModule({

@@ -39,10 +39,6 @@ export class ListGamesComponent {
                 });
             });
             this.gameStore.updateGameListState(this.gameList);
-            console.log('ALTERED LIST', this.gameList)
-
-            // dispatch action to update list
-
         })
     }
 
