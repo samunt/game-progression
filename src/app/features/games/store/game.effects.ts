@@ -6,8 +6,8 @@ import {
     AddGameSuccess,
     GameActions,
     RetrieveGamesFailure,
-    RetrieveGamesSuccess, UpdateGameListFailure,
-    UpdateGameListSuccess
+    RetrieveGamesSuccess, UpdateGameFailure, UpdateGameListFailure,
+    UpdateGameListSuccess, UpdateGameSuccess
 } from "../../games/store/game.actions";
 import {catchError, map, switchMap, tap} from "rxjs/operators";
 import {of} from "rxjs";
@@ -27,9 +27,9 @@ export class GameEffects {
         tap(console.log),
         switchMap(() =>
             //call service
-            this.dataService.getProfile().pipe(
+            this.dataService.getGames().pipe(
                 // return a success action when everything goes well
-                map(profile => new RetrieveGamesSuccess(profile.games[0])),
+                map(games => new RetrieveGamesSuccess(games)),
                 // return a fail action when its FUBAR
                 catchError(error => of(new RetrieveGamesFailure(error)))
             ),
@@ -48,15 +48,15 @@ export class GameEffects {
         ),
     );
 
-    // @Effect()
-    // editGameList = this.actions$.pipe(
-    //     ofType(GameActions.UpdateGameList),
-    //     tap(console.log),
-    //     switchMap((action) =>
-    //         this.dataService.updateProfile(action.gameList).pipe(
-    //             map( gameList => new UpdateGameListSuccess(gameList[0].games)),
-    //             catchError( error => of(new UpdateGameListFailure(error)))
-    //         ),
-    //     ),
-    // );
+    @Effect()
+    updateGame = this.actions$.pipe(
+        ofType(GameActions.UpdateGame),
+        tap(console.log),
+        switchMap((action) =>
+            this.dataService.updateGame(action.game).pipe(
+                map(game => new UpdateGameSuccess(game)),
+                catchError( error => of(new UpdateGameFailure(error)))
+            ),
+        ),
+    );
 }

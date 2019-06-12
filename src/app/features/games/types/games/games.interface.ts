@@ -4,5 +4,7 @@ export interface Game {
     platform: number;
     platformName: string;
     estCompleted: number;
+    imgUrl: string;
+    priority: number;
     compDate: Date;
 }

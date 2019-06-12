@@ -14,7 +14,10 @@ export enum GameActions {
     UpdateGameListFailure = 'Games-UpdateGameListFailure',
     AddGame = 'Game-AddGame',
     AddGameSuccess = 'Game-AddGameSuccess',
-    AddGameFailure = 'Game-AddGameFailure'
+    AddGameFailure = 'Game-AddGameFailure',
+    UpdateGame = 'Game-UpdateGame',
+    UpdateGameSuccess = 'Game-UpdateGameSuccess',
+    UpdateGameFailure = 'Game-UpdateGameFailure'
 }
 
 export class RetrieveGames implements Action {
@@ -69,6 +72,24 @@ export class AddGameFailure {
     constructor(public error: HttpErrorResponse) {}
 }
 
+export class UpdateGame {
+    public readonly type = GameActions.UpdateGame;
+
+    constructor(public game: Game) {}
+}
+
+export class UpdateGameSuccess {
+    public readonly type = GameActions.UpdateGameSuccess;
+
+    constructor(public game: Game) {}
+}
+
+export class UpdateGameFailure {
+    public readonly type = GameActions.UpdateGameFailure;
+
+    constructor(public error: HttpErrorResponse) {}
+}
+
 export type GamesActionsUnion =
     | RetrieveGames
     | RetrieveGamesSuccess
@@ -78,4 +99,8 @@ export type GamesActionsUnion =
     | UpdateGameListFailure
     | AddGame
     | AddGameSuccess
-    | AddGameFailure;
+    | AddGameFailure
+    | UpdateGame
+    | UpdateGameSuccess
+    | UpdateGameFailure
+    ;

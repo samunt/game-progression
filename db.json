@@ -31,60 +31,56 @@
     {
       "id": 89,
       "name": "kjnkjn",
-      "platformId": null,
+      "platform": "",
       "platformName": null,
       "estCompleted": null,
       "compDate": null,
       "imageURL": "",
-      "platform": "",
       "numHrsComplete": null,
       "priority": null
     },
     {
       "id": "7mmojqwavsujws5bkiv",
       "name": "mario kart",
-      "platformId": null,
+      "platform": "switch",
       "platformName": null,
       "estCompleted": null,
       "compDate": null,
+      "imgUrl": null,
+      "priority": 1,
       "imageURL": "google.com",
-      "platform": "n64",
-      "numHrsComplete": 50,
-      "priority": 1
+      "numHrsComplete": "666"
     },
     {
       "id": "79zoix2ez22jws5d0qc",
       "name": "Mario Bros",
-      "platformId": null,
+      "platform": "switch",
       "platformName": null,
       "estCompleted": null,
       "compDate": null,
       "imageURL": "gmail.com",
-      "platform": "switch",
       "numHrsComplete": 390,
       "priority": 3
     },
     {
       "id": "d9t4y6qs0ajws5ewdn",
       "name": "knjkn",
-      "platformId": null,
+      "platform": "",
       "platformName": null,
       "estCompleted": null,
       "compDate": null,
       "imageURL": "",
-      "platform": "",
       "numHrsComplete": null,
       "priority": null
     },
     {
       "id": "3g5hz234e1ojws5fket",
       "name": "",
-      "platformId": null,
+      "platform": "",
       "platformName": null,
       "estCompleted": null,
       "compDate": null,
       "imageURL": "",
-      "platform": "",
       "numHrsComplete": null,
       "priority": null
     }

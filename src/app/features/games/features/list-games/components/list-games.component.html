@@ -2,7 +2,7 @@
 <app-button (click)="addGame()">Add Game</app-button>
 <app-card [attr.backgroundColor]="color">
     <li>
-        <ul *ngFor="let game of gameList">
+        <ul *ngFor="let game of gameList" (click)="router.navigate(['/edit-game/', game.id])">
             <li>{{game.id}}</li>
             <li>{{game.name}}</li>
             <li>{{game.platformName}}</li>

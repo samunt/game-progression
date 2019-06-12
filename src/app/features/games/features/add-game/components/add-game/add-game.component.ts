@@ -19,7 +19,8 @@ export class AddGameComponent  {
       imageURL: new FormControl(''),
       platform: new FormControl(''),
       numHrsComplete: new FormControl(''),
-      priority: new FormControl('')
+      priority: new FormControl(''),
+      imgUrl: new FormControl('')
     });
     //generate unique game id
     let hash = Math.random().toString(36).substring(2) + (new Date()).getTime().toString(36);
@@ -33,10 +34,12 @@ export class AddGameComponent  {
     let game: Game = {
       id: null,
       name: null,
-      platformId: null,
+      platform: null,
       platformName: null,
       estCompleted: null,
-      compDate: null
+      compDate: null,
+      imgUrl: null,
+      priority: null
     };
     //get keys from form.control (which should match the Game type
     //iterate over game keys

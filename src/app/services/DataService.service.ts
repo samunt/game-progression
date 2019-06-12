@@ -32,4 +32,9 @@ export class DataService {
         return this.httpClient
             .post<Game>('/games/', payload)
     }
+
+    public updateGame(payload): Observable<Game> {
+        return this.httpClient
+            .put<Game>('/games/' + payload.id, payload)
+    }
 }
