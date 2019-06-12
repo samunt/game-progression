@@ -1,29 +1,57 @@
 <h2>Edit Profile</h2>
-<app-button (click)="press()">View Profile</app-button>
+<app-button (click)="press()"
+            id="cancel"
+            [bgColor]="bgColor"
+            [fontWeight]="fontWeight"
+            [fontFamily]="fontFamily"
+            [fontColor]="fontColor"
+            [borderRadius]="borderRadius"
+            [width]="width"
+            [height]="height"
+            [fontSize]="fontSize">
+  CANCEL
+</app-button>
 
-
-<form *ngIf="form"
-      [formGroup]="form">
-  <label>ID
-    <input disabled formControlName="id"/>
-  </label>
-  <br>
-  <label>First Name
-    <input formControlName="firstName" />
-  </label>
-  <br>
-  <label>Last Name
-    <input formControlName="lastName" />
-  </label>
-  <br>
-  <label>Avatar
-    <input formControlName="avatar" />
-  </label>
-  <br>
-  <label>Avg Number of Hours
-    <input formControlName="avgNumHrs" />
-  </label>
-  <br>
-  <app-button (click)="submitForm(form)">SUBMIT</app-button>
-</form>
+<app-card [borderRadius]="borderRadius"
+          [bgColor]="cardBgColor"
+          [width]="cardWidth"
+          [height]="cardHeight"
+          [padding]="cardPadding"
+          [margin]="cardMargin">
+  <form *ngIf="form"
+        [formGroup]="form">
+    <label>ID
+      <input disabled formControlName="id"/>
+    </label>
+    <br>
+    <label>First Name
+      <input formControlName="firstName" />
+    </label>
+    <br>
+    <label>Last Name
+      <input formControlName="lastName" />
+    </label>
+    <br>
+    <label>Avatar
+      <input formControlName="avatar" />
+    </label>
+    <br>
+    <label>Avg Number of Hours
+      <input formControlName="avgNumHrs" />
+    </label>
+    <br>
+    <app-button (click)="submitForm(form)"
+                id="submit"
+                [bgColor]="bgColorSave"
+                [fontWeight]="fontWeight"
+                [fontFamily]="fontFamily"
+                [fontColor]="fontColor"
+                [borderRadius]="borderRadius"
+                [width]="width"
+                [height]="height"
+                [fontSize]="fontSize">
+      SAVE
+    </app-button>
+  </form>
+</app-card>
 

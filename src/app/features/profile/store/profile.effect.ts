@@ -10,12 +10,14 @@ import {
     EditProfileFailure,
 } from "./profile.actions";
 import {DataService} from "../../../services";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class ProfileEffects {
     constructor(
         private actions$: Actions,
-        private dataService: DataService
+        private dataService: DataService,
+        private router: Router
     ) {}
     @Effect()
     retrieveProfile$ = this.actions$.pipe(
@@ -38,11 +40,20 @@ export class ProfileEffects {
         ofType(ProfileActions.EditProfile),
         tap(console.log),
         switchMap((action) =>
-            this.dataService.updateProfile(action.profile).pipe(  //<---- doesnt know what the payload is...
+            this.dataService.updateProfile(action.profile).pipe(
                 map( profile => new EditProfileSuccess(profile)),
                 catchError( error => of(new EditProfileFailure(error)))
             ),
         ),
+    );
+
+    @Effect()
+    editProfileSuccess = this.actions$.pipe(
+        ofType(ProfileActions.EditProfileSuccess),
+        switchMap(() =>
+            this.router.navigate(['/profile-details']).then(
+            )
+         ),
     );
 
 

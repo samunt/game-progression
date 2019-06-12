@@ -27,6 +27,48 @@ export class EditProfileComponent {
   @Input()
   public avgNumHrs: number = null;
 
+  @Input()
+  public fontFamily = 'sans-serif';
+
+  @Input()
+  public fontSize = '1rem';
+
+  @Input()
+  public fontWeight = 300;
+
+  @Input()
+  public bgColor = '#9dafbd';
+
+  @Input()
+  public bgColorSave = '#76b43f';
+
+  @Input()
+  public cardBgColor = '#30495f';
+
+  @Input()
+  public fontColor = '#30495f';
+
+  @Input()
+  public borderRadius = '5px';
+
+  @Input()
+  public width = '10rem';
+
+  @Input()
+  public height = '2rem';
+
+  @Input()
+  public cardWidth = '93%';
+
+  @Input()
+  public cardHeight = null;
+
+  @Input()
+  public cardPadding = '1rem';
+
+  @Input()
+  public cardMargin = '0 2rem';
+
   @Output()
   public pressed = new EventEmitter<boolean>();
   public clickedButton = true;
@@ -65,6 +107,6 @@ export class EditProfileComponent {
     this.profile.firstName = this.form.controls.firstName.value;
     this.profile.lastName = this.form.controls.lastName.value;
     this.profile.avgNumHrs = this.form.controls.avgNumHrs.value;
-    this.store.editProfileState(this.profile)
+    this.store.editProfileState(this.profile);
   }
 }

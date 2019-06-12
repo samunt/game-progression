@@ -2,10 +2,10 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Sam",
+      "firstName": "Samuel",
       "lastName": "Unterman",
       "avatar": "https://avatarfiles.alphacoders.com/144/144986.jpg",
-      "avgNumHrs": 2,
+      "avgNumHrs": "8",
       "error": null
     }
   ],
