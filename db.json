@@ -11,38 +11,21 @@
   ],
   "games": [
     {
-      "id": 1,
-      "userId": 1,
-      "name": "Super Mario",
+      "id": "4kjxncvmfgujws5bkiv",
+      "name": "Smash Bros",
       "platform": 1,
-      "platformName": null,
-      "estComp": 60,
-      "compDate": null
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "name": "Yoshi and Friends",
-      "platform": 2,
-      "platformName": null,
-      "estComp": 80,
-      "compDate": null
-    },
-    {
-      "id": 89,
-      "name": "kjnkjn",
-      "platform": "",
       "platformName": null,
       "estCompleted": null,
       "compDate": null,
-      "imageURL": "",
-      "numHrsComplete": null,
-      "priority": null
+      "imgUrl": null,
+      "priority": "21",
+      "imageURL": null,
+      "numHrsComplete": "23"
     },
     {
       "id": "7mmojqwavsujws5bkiv",
       "name": "mario kart",
-      "platform": "switch",
+      "platform": 4,
       "platformName": null,
       "estCompleted": null,
       "compDate": null,
@@ -54,7 +37,7 @@
     {
       "id": "79zoix2ez22jws5d0qc",
       "name": "Mario Bros",
-      "platform": "switch",
+      "platform": 2,
       "platformName": null,
       "estCompleted": null,
       "compDate": null,
@@ -65,7 +48,7 @@
     {
       "id": "d9t4y6qs0ajws5ewdn",
       "name": "knjkn",
-      "platform": "",
+      "platform": 3,
       "platformName": null,
       "estCompleted": null,
       "compDate": null,
@@ -75,14 +58,15 @@
     },
     {
       "id": "3g5hz234e1ojws5fket",
-      "name": "",
-      "platform": "",
+      "name": "Sams Game",
+      "platform": 1,
       "platformName": null,
       "estCompleted": null,
       "compDate": null,
-      "imageURL": "",
-      "numHrsComplete": null,
-      "priority": null
+      "imgUrl": null,
+      "priority": null,
+      "imageURL": null,
+      "numHrsComplete": null
     }
   ],
   "platforms": [
@@ -99,7 +83,7 @@
       "platform": "PS4"
     },
     {
-      "id": 5,
+      "id": 4,
       "platform": "Xbox"
     }
   ]

@@ -18,6 +18,60 @@ export class ListGamesComponent {
     public platformList: any;
 
     @Input()
+    public src: string = null;
+
+    @Input()
+    public firstName: string = null;
+
+    @Input()
+    public lastName: string = null;
+
+    @Input()
+    public avgNumHrs: number = null;
+
+    @Input()
+    public fontFamily = 'sans-serif';
+
+    @Input()
+    public fontSize = '1rem';
+
+    @Input()
+    public fontWeight = 300;
+
+    @Input()
+    public bgColor = '#9dafbd';
+
+    @Input()
+    public bgColorSave = '#76b43f';
+
+    @Input()
+    public cardBgColor = '#30495f';
+
+    @Input()
+    public fontColor = '#30495f';
+
+    @Input()
+    public borderRadius = '5px';
+
+    @Input()
+    public width = '10rem';
+
+    @Input()
+    public height = '2rem';
+
+    @Input()
+    public cardWidth = '100%';
+
+    @Input()
+    public cardHeight = null;
+
+    @Input()
+    public cardPadding = '1rem';
+
+    @Input()
+    public cardMargin = '0 2rem';
+
+    @Input()
     public color = 'navy';
 
     constructor(public dataService: DataService, public gameStore: GameStore, public router: Router) {

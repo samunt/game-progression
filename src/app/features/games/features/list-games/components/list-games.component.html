@@ -1,11 +1,31 @@
-<h1>list games</h1>
-<app-button (click)="addGame()">Add Game</app-button>
-<app-card [attr.backgroundColor]="color">
-    <li>
-        <ul *ngFor="let game of gameList" (click)="router.navigate(['/edit-game/', game.id])">
-            <li>{{game.id}}</li>
-            <li>{{game.name}}</li>
-            <li>{{game.platformName}}</li>
-        </ul>
-    </li>
-</app-card>
+<h2>Games Owned</h2>
+<app-button (click)="addGame()"
+            id="add-game"
+            [bgColor]="bgColor"
+            [fontWeight]="fontWeight"
+            [fontFamily]="fontFamily"
+            [fontColor]="fontColor"
+            [borderRadius]="borderRadius"
+            [width]="width"
+            [height]="height"
+            [fontSize]="fontSize">
+    ADD GAME
+</app-button>
+<div class="flex-container">
+    <app-card *ngFor="let game of gameList"
+              (click)="router.navigate(['/edit-game/', game.id])"
+              class="card"
+              [borderRadius]="borderRadius"
+              [bgColor]="cardBgColor"
+              [width]="cardWidth"
+              [height]="cardHeight"
+              [padding]="cardPadding"
+              [margin]="cardMargin">
+
+                <h2>{{ game.name }}</h2>
+                <h3>{{ game.platformName ? game.platformName : 'n/a' }}</h3>
+                <p>Est. % Completion {{ game.estComp ? game.estComp : 'n/a' }}</p>
+                <p>Completion Date: {{ game }}</p>
+
+    </app-card>
+</div>
