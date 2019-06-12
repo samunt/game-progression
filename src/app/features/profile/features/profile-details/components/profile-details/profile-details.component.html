@@ -1,11 +1,37 @@
 <h2>My Profile</h2>
-<app-button (click)="press()">EDIT</app-button>
+<app-button (click)="press()"
+            [bgColor]="bgColor"
+            [fontWeight]="fontWeight"
+            [fontFamily]="fontFamily"
+            [fontColor]="fontColor"
+            [borderRadius]="borderRadius"
+            [width]="width"
+            [height]="height"
+            [fontSize]="fontSize">
+    EDIT
+</app-button>
+<app-card [borderRadius]="borderRadius"
+          [bgColor]="cardBgColor"
+          [width]="cardWidth"
+          [height]="cardHeight"
+          [padding]="cardPadding"
+          [margin]="cardMargin">
+    <h3>Name</h3>
+    <p>{{firstName}}  {{lastName}}</p>
 
-<h3>Name</h3>
-<p>{{firstName}}  {{lastName}}</p>
+    <h3>Avatar</h3>
+    <p>{{src}}</p>
 
-<h3>Avatar</h3>
-<p>{{src}}</p>
+    <h3>Average Number of Hours to Game Per Day</h3>
+    <p>{{avgNumHrs}}</p>
 
-<h3>Average Number of Hours to Game Per Day</h3>
-<p>{{avgNumHrs}}</p>
+    <!--    background-color: #30495f;-->
+<!--    color: white;-->
+<!--    font-family: sans-serif;-->
+<!--    font-weight: 400;-->
+<!--    height: 3rem;-->
+<!--    line-height: 3rem;-->
+<!--    padding: 0 3rem;-->
+<!--    margin: 1rem 2rem;-->
+<!--    border-radius: 5px;-->
+</app-card>

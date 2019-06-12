@@ -1,0 +1,27 @@
+:host {
+  background-color: #9dafbd;
+  h2 {
+    background-color: #30495f;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 400;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 3rem;
+    margin: 1rem 2rem;
+    border-radius: 5px;
+  }
+  app-button {
+    position: absolute;
+    right: 10rem;
+    top: 16rem;
+  }
+  p {
+    color: white;
+    font-weight: 400;
+  }
+  h3 {
+    color: white;
+    font-weight: 400;
+  }
+}

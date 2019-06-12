@@ -1,8 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {DataService} from "../../../../../../services";
 import {Subscription} from "rxjs";
-import {Router, RouterOutlet} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profile-details',
@@ -24,6 +23,46 @@ export class ProfileDetailsComponent{
   @Input()
   public avgNumHrs: number = null;
 
+  @Input()
+  public fontFamily = 'sans-serif';
+
+  @Input()
+  public fontSize = '1.5rem';
+
+  @Input()
+  public fontWeight = 300;
+
+  @Input()
+  public bgColor = '#9dafbd';
+
+  @Input()
+  public cardBgColor = '#30495f';
+
+  @Input()
+  public fontColor = '#30495f';
+
+  @Input()
+  public borderRadius = '5px';
+
+  @Input()
+  public width = '10rem';
+
+  @Input()
+  public height = '2rem';
+
+  @Input()
+  public cardWidth = '93%';
+
+  @Input()
+  public cardHeight = null;
+
+  @Input()
+  public cardPadding = '1rem';
+
+  @Input()
+  public cardMargin = '0 2rem';
+
+
   @Output()
   public pressed = new EventEmitter<boolean>();
   public clickedButton = false;
@@ -35,7 +74,6 @@ export class ProfileDetailsComponent{
       this.firstName = this.profile.firstName;
       this.lastName = this.profile.lastName;
       this.avgNumHrs = this.profile.avgNumHrs;
-      console.log(this.profile)
     })
   }
 

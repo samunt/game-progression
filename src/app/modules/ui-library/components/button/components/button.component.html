@@ -1,3 +1,10 @@
-<button>
+<button [style.backgroundColor]="bgColor"
+        [style.fontFamily]="fontFamily"
+        [style.fontWeight]="fontWeight"
+        [style.borderRadius]="borderRadius"
+        [style.color]="fontColor"
+        [style.width]="width"
+        [style.height]="height"
+        [style.fontSize]="fontSize">
   <ng-content></ng-content>
 </button>
