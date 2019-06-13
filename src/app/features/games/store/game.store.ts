@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/types/app-state/app-state.interface';
-import {AddGame, RetrieveGames, UpdateGame, UpdateGameList} from "./game.actions";
-import {FormGroup} from "@angular/forms";
+import {AddGame, DeleteGame, RetrieveGames, UpdateGame, UpdateGameList} from "./game.actions";
 import {Game} from "../types/games";
 
 
@@ -25,5 +24,9 @@ export class GameStore {
 
     public updateGame(game: Game): void {
         return this.store.dispatch((new UpdateGame(game)))
+    }
+
+    public deleteGame(id): void {
+        return this.store.dispatch((new DeleteGame(id)))
     }
 }

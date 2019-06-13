@@ -1,13 +1,26 @@
-<h1>Edit Game</h1>
-<h2>Add Game</h2>
-<app-button>Save</app-button>
-<app-button>Cancel</app-button>
-
-<app-card>
+<h2>Edit Game</h2>
+<app-button (click)="pressCancel()"
+            id="cancel"
+            [bgColor]="bgColor"
+            [fontWeight]="fontWeight"
+            [fontFamily]="fontFamily"
+            [fontColor]="fontColor"
+            [borderRadius]="borderRadius"
+            [width]="width"
+            [height]="height"
+            [fontSize]="fontSize">
+    CANCEL
+</app-button>
+<app-card [borderRadius]="borderRadius"
+          [bgColor]="cardBgColor"
+          [width]="cardWidth"
+          [height]="cardHeight"
+          [padding]="cardPadding"
+          [margin]="cardMargin">
     <form *ngIf="form"
           [formGroup]="form">
         <label>ID
-            <input formControlName="id" disabled/>
+            <input formControlName="id"/>
         </label>
         <br>
         <label>Name
@@ -18,8 +31,8 @@
             <input formControlName="imageURL" />
         </label>
         <br>
-        <label>Platform
-            <input formControlName="platform" />
+        <label>Platform Name
+            <input formControlName="platformName" />
         </label>
         <br>
         <label>Number of Hours to Complete
@@ -30,6 +43,29 @@
             <input formControlName="priority" />
         </label>
 
-        <app-button (click)="submitForm(form)">SUBMIT</app-button>
+        <app-button (click)="submitForm(form)"
+                    id="submit"
+                    [bgColor]="bgColorSave"
+                    [fontWeight]="fontWeight"
+                    [fontFamily]="fontFamily"
+                    [fontColor]="fontColor"
+                    [borderRadius]="borderRadius"
+                    [width]="width"
+                    [height]="height"
+                    [fontSize]="fontSize">
+            SAVE
+        </app-button>
+        <app-button (click)="deleteForm(form)"
+                    id="delete"
+                    [bgColor]="bgColorDel"
+                    [fontWeight]="fontWeight"
+                    [fontFamily]="fontFamily"
+                    [fontColor]="fontColorWhite"
+                    [borderRadius]="borderRadius"
+                    [width]="width"
+                    [height]="height"
+                    [fontSize]="fontSize">
+            DELETE
+        </app-button>
     </form>
 </app-card>

@@ -96,6 +96,7 @@ export class ListGamesComponent {
         })
     }
 
+
     public addGame() {
         this.router.navigate(['/add-game'])
     }

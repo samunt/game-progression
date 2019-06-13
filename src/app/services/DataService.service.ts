@@ -37,4 +37,9 @@ export class DataService {
         return this.httpClient
             .put<Game>('/games/' + payload.id, payload)
     }
+
+    public deleteGame(payload): Observable<Game> {
+        return this.httpClient
+            .delete<Game>('/games/' + payload.game)
+    }
 }

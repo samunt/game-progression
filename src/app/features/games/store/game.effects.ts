@@ -3,13 +3,13 @@ import {Actions, Effect, ofType} from "@ngrx/effects";
 import {DataService} from "../../../services";
 import {
     AddGameFailure,
-    AddGameSuccess,
+    AddGameSuccess, DeleteGameFailure, DeleteGameSuccess,
     GameActions,
     RetrieveGamesFailure,
     RetrieveGamesSuccess, UpdateGameFailure, UpdateGameListFailure,
     UpdateGameListSuccess, UpdateGameSuccess
 } from "../../games/store/game.actions";
-import {catchError, map, switchMap, tap} from "rxjs/operators";
+import {catchError, map, mergeMap, switchMap, tap} from "rxjs/operators";
 import {of} from "rxjs";
 import {EditProfileFailure, EditProfileSuccess, ProfileActions} from "../../profile/store/profile.actions";
 
@@ -56,6 +56,18 @@ export class GameEffects {
             this.dataService.updateGame(action.game).pipe(
                 map(game => new UpdateGameSuccess(game)),
                 catchError( error => of(new UpdateGameFailure(error)))
+            ),
+        ),
+    );
+
+    @Effect()
+    deleteGame = this.actions$.pipe(
+        ofType(GameActions.DeleteGame),
+        tap(console.log),
+        mergeMap((action) =>
+            this.dataService.deleteGame(action).pipe(
+                map(() => new DeleteGameSuccess()),
+                catchError(error => of(new DeleteGameFailure(error)))
             ),
         ),
     );

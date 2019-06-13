@@ -1,5 +1,6 @@
 import {GameActions, GamesActionsUnion} from './game.actions';
 import {createGameState, GameState} from "../types/game-state";
+import {HttpErrorResponse} from "@angular/common/http";
 
 export function GameReducer(
     state: GameState = createGameState(),
@@ -51,6 +52,20 @@ export function GameReducer(
             return {
                 ...state,
                 error: action.error
+            };
+        case GameActions.DeleteGame:
+            return {
+                ...state,
+                error: null
+            };
+        case GameActions.DeleteGameSuccess:
+            return {
+                ...state,
+                error: null
+            };
+        case GameActions.DeleteGameFailure:
+            return {
+                ...state
             };
         default:
             return state;

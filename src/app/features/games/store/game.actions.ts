@@ -1,11 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Action } from '@ngrx/store';
 import { Game } from '../types/games';
-import {FormGroup} from "@angular/forms";
-import {ProfileActions} from "../../profile/store/profile.actions";
-
 
 export enum GameActions {
+    DeleteGame = 'Game-DeleteGame',
+    DeleteGameSuccess = 'Game-DeleteGameSuccess',
+    DeleteGameFailure = 'Game-DeleteGameFailure',
     RetrieveGames = 'Games-RetrieveGames',
     RetrieveGamesSuccess = 'Games-RetrieveGamesSuccess',
     RetrieveGamesFailure = 'Games-RetrieveGamesFailure',
@@ -90,7 +90,27 @@ export class UpdateGameFailure {
     constructor(public error: HttpErrorResponse) {}
 }
 
+export class DeleteGame {
+    public readonly type = GameActions.DeleteGame;
+
+    constructor(public game: Game){}
+}
+
+export class DeleteGameSuccess {
+    public readonly type = GameActions.DeleteGame;
+
+}
+
+export class DeleteGameFailure {
+    public readonly type = GameActions.DeleteGame;
+
+    constructor(public error: HttpErrorResponse){}
+}
+
 export type GamesActionsUnion =
+    | DeleteGame
+    | DeleteGameSuccess
+    | DeleteGameFailure
     | RetrieveGames
     | RetrieveGamesSuccess
     | RetrieveGamesFailure
@@ -102,5 +122,4 @@ export type GamesActionsUnion =
     | AddGameFailure
     | UpdateGame
     | UpdateGameSuccess
-    | UpdateGameFailure
-    ;
+    | UpdateGameFailure;
