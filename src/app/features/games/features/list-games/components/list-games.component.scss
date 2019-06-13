@@ -21,9 +21,34 @@
     position: relative;
     bottom: 2rem;
   }
+  p {
+    color: #9dafbc;
+    font-family: sans-serif;
+    position: relative;
+    padding-left: 3rem;
+    bottom: 3rem;
+  }
   #add-game {
     position: absolute;
     right: 5rem;
     top: 16rem;
+  }
+  .completion-color {
+    width: 20px;
+  }
+  .red {
+    background-color: red;
+    position: absolute;
+    height: 200px;
+  }
+  .yellow {
+    background-color: yellow;
+    position: absolute;
+    height: 200px;
+  }
+  .green {
+    background-color: green;
+    position: absolute;
+    height: 200px;
   }
 }

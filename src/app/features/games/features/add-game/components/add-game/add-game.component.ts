@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {GameStore} from "../../../../store/game.store";
 import {Game} from "../../../../types/games";
@@ -11,6 +11,53 @@ import {Router} from "@angular/router";
 export class AddGameComponent  {
   public form: FormGroup;
   public game: Game;
+  @Input()
+  public fontFamily = 'sans-serif';
+
+  @Input()
+  public fontSize = '1rem';
+
+  @Input()
+  public bgColorDel = '#b43f3f';
+
+  @Input()
+  public fontWeight = 300;
+
+  @Input()
+  public bgColor = '#9dafbd';
+
+  @Input()
+  public bgColorSave = '#76b43f';
+
+  @Input()
+  public cardBgColor = '#30495f';
+
+  @Input()
+  public fontColor = '#30495f';
+
+  @Input()
+  public fontColorWhite = 'white';
+
+  @Input()
+  public borderRadius = '5px';
+
+  @Input()
+  public width = '10rem';
+
+  @Input()
+  public height = '2rem';
+
+  @Input()
+  public cardWidth = '93%';
+
+  @Input()
+  public cardHeight = null;
+
+  @Input()
+  public cardPadding = '1rem';
+
+  @Input()
+  public cardMargin = '0 2rem';
 
   constructor(public store: GameStore, private router: Router) {
     this.form = new FormGroup({
@@ -52,6 +99,10 @@ export class AddGameComponent  {
 
     newGame(form.controls);
     this.store.addGame(game);
+    this.router.navigate(['/list-games']);
+  }
+
+  pressCancel() {
     this.router.navigate(['/list-games']);
   }
 }

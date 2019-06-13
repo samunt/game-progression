@@ -74,6 +74,7 @@ export class ListGamesComponent {
     @Input()
     public color = 'navy';
 
+
     constructor(public dataService: DataService, public gameStore: GameStore, public router: Router) {
         this.platformSubscription = this.dataService.getPlatforms().subscribe(
             platforms => {
@@ -99,5 +100,15 @@ export class ListGamesComponent {
 
     public addGame() {
         this.router.navigate(['/add-game'])
+    }
+
+    public getCardColor(game) {
+        if (game.estCompleted === 100) {
+            return 'green';
+        } else if (game.estCompleted === 0) {
+            return 'red';
+        } else {
+            return 'yellow'
+        }
     }
 }

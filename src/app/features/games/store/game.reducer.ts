@@ -58,15 +58,15 @@ export function GameReducer(
                 ...state,
                 error: null
             };
-        case GameActions.DeleteGameSuccess:
-            return {
-                ...state,
-                error: null
-            };
-        case GameActions.DeleteGameFailure:
-            return {
-                ...state
-            };
+        // case GameActions.DeleteGameSuccess:
+        //     return {
+        //         ...state,
+        //         error: null
+        //     };
+        // case GameActions.DeleteGameFailure:
+        //     return {
+        //         ...state
+        //     };
         default:
             return state;
     }

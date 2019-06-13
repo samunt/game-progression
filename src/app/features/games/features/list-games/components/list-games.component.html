@@ -21,10 +21,10 @@
               [height]="cardHeight"
               [padding]="cardPadding"
               [margin]="cardMargin">
-
+                <div class="completion-color" [ngClass]="getCardColor(game)"></div>
                 <h2>{{ game.name }}</h2>
                 <h3>{{ game.platformName ? game.platformName : 'n/a' }}</h3>
-                <p>Est. % Completion {{ game.estComp ? game.estComp : 'n/a' }}</p>
+                <p>Est. % Completion {{ game.estCompleted ? game.estCompleted : 'n/a' }}%</p>
                 <p>Completion Date: {{ game }}</p>
 
     </app-card>

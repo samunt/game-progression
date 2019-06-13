@@ -1,8 +1,22 @@
 <h2>Add Game</h2>
-  <app-button>Save</app-button>
-  <app-button>Cancel</app-button>
+<app-button (click)="pressCancel()"
+            id="cancel"
+            [bgColor]="bgColor"
+            [fontWeight]="fontWeight"
+            [fontFamily]="fontFamily"
+            [fontColor]="fontColor"
+            [borderRadius]="borderRadius"
+            [width]="width"
+            [height]="height"
+            [fontSize]="fontSize">
+CANCEL</app-button>
 
-<app-card>
+<app-card [borderRadius]="borderRadius"
+          [bgColor]="cardBgColor"
+          [width]="cardWidth"
+          [height]="cardHeight"
+          [padding]="cardPadding"
+          [margin]="cardMargin">
   <form *ngIf="form"
         [formGroup]="form">
     <label>ID
@@ -33,6 +47,16 @@
       <input formControlName="priority" />
     </label>
 
-    <app-button (click)="submitForm(form)">SUBMIT</app-button>
+    <app-button (click)="submitForm(form)"
+                id="submit"
+                [bgColor]="bgColor"
+                [fontWeight]="fontWeight"
+                [fontFamily]="fontFamily"
+                [fontColor]="fontColor"
+                [borderRadius]="borderRadius"
+                [width]="width"
+                [height]="height"
+                [fontSize]="fontSize">
+      SUBMIT</app-button>
   </form>
 </app-card>
