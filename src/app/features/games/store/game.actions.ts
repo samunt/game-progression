@@ -97,12 +97,12 @@ export class DeleteGame {
 }
 
 export class DeleteGameSuccess {
-    public readonly type = GameActions.DeleteGame;
+    public readonly type = GameActions.DeleteGameSuccess;
 
 }
 
 export class DeleteGameFailure {
-    public readonly type = GameActions.DeleteGame;
+    public readonly type = GameActions.DeleteGameFailure;
 
     constructor(public error: HttpErrorResponse){}
 }
