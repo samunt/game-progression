@@ -8,7 +8,9 @@
             [borderRadius]="borderRadius"
             [width]="width"
             [height]="height"
-            [fontSize]="fontSize">
+            [fontSize]="fontSize"
+            [position]="position"
+            [top]="top">
     CANCEL
 </app-button>
 <app-card [borderRadius]="borderRadius"
@@ -74,7 +76,8 @@
                     [borderRadius]="borderRadius"
                     [width]="width"
                     [height]="height"
-                    [fontSize]="fontSize">
+                    [fontSize]="fontSize"
+                    [position]="position">
             SAVE
         </app-button>
         <app-button (click)="deleteForm(form)"

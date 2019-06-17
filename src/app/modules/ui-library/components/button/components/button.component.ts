@@ -29,4 +29,19 @@ export class ButtonComponent {
 
   @Input()
   public fontSize: string = null;
+
+  @Input()
+  public position: string = null;
+
+  @Input()
+  public top: string = null;
+
+  @Input()
+  public left: string = null;
+
+  @Input()
+  public right: string = null;
+
+  @Input()
+  public bottom: string = null;
 }

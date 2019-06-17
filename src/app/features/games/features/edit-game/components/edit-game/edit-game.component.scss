@@ -1,6 +1,6 @@
 :host {
   position: relative;
-  bottom: 3rem;
+  bottom: 5rem;
   h2 {
     background-color: #30495f;
     color: white;
@@ -11,6 +11,8 @@
     padding: 0 1rem;
     margin: 1rem 2rem;
     border-radius: 5px;
+    position: relative;
+    top: 2rem;
   }
   #submit {
     position: absolute;
@@ -18,9 +20,9 @@
     top: 16rem;
   }
   #cancel {
-    position: absolute;
-    right: 5rem;
-    top: 16rem;
+    position: relative;
+    left: 80%;
+    bottom: 3.5rem;
   }
   #delete {
     position: absolute;

@@ -25,6 +25,7 @@ export class EditGameComponent implements OnInit {
   private convertedGame: Game;
   private hoursPattern = "^[1-9][0-9]*$";
   public submitted = false;
+  private completed: boolean;
 
   @Input()
   public src: string = null;
@@ -84,8 +85,13 @@ export class EditGameComponent implements OnInit {
   public cardPadding = '1rem';
 
   @Input()
+  public position = 'relative';
+
+  @Input()
+  public top = '2rem';
+
+  @Input()
   public cardMargin = '0 2rem';
-  private completed: boolean;
 
 
   constructor(public store: GameStore,
