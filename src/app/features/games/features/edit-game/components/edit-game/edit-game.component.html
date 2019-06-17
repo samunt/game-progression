@@ -41,7 +41,7 @@
         </div>
 
         <br>
-        <label>Platform Name
+        <label style="display: -webkit-box;">Platform Name
             <input type="radio" formControlName="platformName" value='Switch'>Switch
             <input type="radio" formControlName="platformName" value="N64">N64
             <input type="radio" formControlName="platformName" value="XBOX">XBOX
@@ -52,12 +52,20 @@
         </div>
 
         <br>
+        <label>Number of hours played
+            <input formControlName="hrsPlayed" />
+        </label>
+        <div *ngIf="submitted && f.hrsPlayed.errors" class="invalid-feedback">
+            <div *ngIf="f.hrsPlayed.errors.required">Hours is required</div>
+            <div *ngIf="f.hrsPlayed.errors.pattern">Needs to be > 0</div>
+        </div>
+        <br>
         <label>Number of Hours to Complete
             <input formControlName="numHrsComplete" />
         </label>
-        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Hours is required</div>
-            <div *ngIf="f.lastName.errors.pattern">Needs to be > 0</div>
+        <div *ngIf="submitted && f.numHrsComplete.errors" class="invalid-feedback">
+            <div *ngIf="f.numHrsComplete.errors.required">Hours is required</div>
+            <div *ngIf="f.numHrsComplete.errors.pattern">Needs to be > 0</div>
         </div>
         <br>
         <label>Priority

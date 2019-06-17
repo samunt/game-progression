@@ -25,7 +25,7 @@ export class GameEffects {
         // filter out the actions, except '[Retrieve Games] Get'
         ofType(GameActions.RetrieveGames),
         tap(console.log),
-        switchMap(() =>
+        mergeMap(() =>
             //call service
             this.dataService.getGames().pipe(
                 // return a success action when everything goes well
@@ -40,7 +40,7 @@ export class GameEffects {
     addGame = this.actions$.pipe(
         ofType(GameActions.AddGame),
         tap(console.log),
-        switchMap((action) =>
+        mergeMap((action) =>
             this.dataService.addGame(action.game).pipe(
                 map( game => new AddGameSuccess(game)),
                 catchError( error => of(new AddGameFailure(error)))
@@ -52,7 +52,7 @@ export class GameEffects {
     updateGame = this.actions$.pipe(
         ofType(GameActions.UpdateGame),
         tap(console.log),
-        switchMap((action) =>
+        mergeMap((action) =>
             this.dataService.updateGame(action.game).pipe(
                 map(game => new UpdateGameSuccess(game)),
                 catchError( error => of(new UpdateGameFailure(error)))

@@ -14,13 +14,7 @@
 <div class="flex-container">
     <app-card *ngFor="let game of gameList"
               (click)="router.navigate(['/edit-game/', game.id])"
-              class="card"
-              [borderRadius]="borderRadius"
-              [bgColor]="cardBgColor"
-              [width]="cardWidth"
-              [height]="cardHeight"
-              [padding]="cardPadding"
-              [margin]="cardMargin">
+              class="card">
                 <div class="completion-color" [ngClass]="getCardColor(game)"></div>
                 <img [src]="game.imgUrl"
                      alt=""

@@ -15,7 +15,6 @@ export class ConvertFormToFileServiceService {
         compDate: null
     };
     public convertFormToGameType(formControlsFromRef) {
-        console.log('===>',formControlsFromRef)
         Object.keys(formControlsFromRef).forEach(e =>
             this.gameToModify[e] = formControlsFromRef[e].value
         );

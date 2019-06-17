@@ -126,24 +126,14 @@ export class EditGameComponent implements OnInit {
         this.completed = false;
         this.form = new FormGroup({
           id: new FormControl({value: gameId, disabled: true}),
-          name: new FormControl(this.game.name, Validators.compose(
-              [Validators.required]
-          )),
-          imageURL: new FormControl(this.game.imgUrl, Validators.compose(
-              [Validators.required]
-          )),
-          platformName: new FormControl(this.game.platformName, Validators.compose(
-              [Validators.required]
-          )),
-          numHrsComplete: new FormControl(this.game.numHrsComplete ? this.game.numHrsComplete : 0, Validators.compose(
-              [Validators.required, Validators.pattern(this.hoursPattern)]
-          )),
-          priority: new FormControl(this.game.priority, Validators.compose(
-              [Validators.required, Validators.pattern(this.hoursPattern)]
-          )),
+          name: new FormControl(this.game.name, Validators.compose([Validators.required])),
+          imageURL: new FormControl(this.game.imgUrl, Validators.compose([Validators.required])),
+          platformName: new FormControl(this.game.platformName, Validators.compose([Validators.required])),
+          hrsPlayed: new FormControl(this.game.hrsPlayed, Validators.compose([Validators.required, Validators.pattern(this.hoursPattern)])),
+          numHrsComplete: new FormControl(this.game.numHrsComplete ? this.game.numHrsComplete : 0, Validators.compose([Validators.required, Validators.pattern(this.hoursPattern)])),
+          priority: new FormControl(this.game.priority, Validators.compose([Validators.required, Validators.pattern(this.hoursPattern)])),
           complete: new FormControl(this.completed)
         });
-
       });
     });
   }
@@ -154,12 +144,13 @@ export class EditGameComponent implements OnInit {
     let platformId: number = null;
     let platformList = this.platformList;
     //get keys from form.control (which should now match the Game type)
+
     this.convertedGame = this.convertForm.convertFormToGameType(form.controls);
     let game = this.convertedGame;
     //iterate over game keys
+    //TODO REMOVE BELOW
     _.forEach(platformList, function(platform){
       platformId = game.platformName.toUpperCase() === platform.platform.toUpperCase() ? platform.id : false;
-      //map the form.control[key].value to the game with the same key
       game.platform = platformId
     });
     //dispatch action to update game

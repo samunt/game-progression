@@ -112,9 +112,10 @@ export class ListGamesComponent {
     }
 
     public getCardColor(game) {
-        if (game.estCompleted === 100) {
+        let gameVal = game.hrsPlayed/game.numHrsComplete;
+        if (gameVal === 1) {
             return 'green';
-        } else if (game.estCompleted === 0) {
+        } else if (gameVal === 0) {
             return 'red';
         } else {
             return 'yellow'

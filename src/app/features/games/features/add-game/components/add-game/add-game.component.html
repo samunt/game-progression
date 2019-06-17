@@ -28,15 +28,14 @@ CANCEL</app-button>
     </label>
     <br>
     <label>Image URL
-      <input formControlName="imageURL" />
-    </label>
-    <br>
-    <label>Platform
-      <input formControlName="platform" />
-    </label>
-    <br>
-    <label>Image URL
       <input formControlName="imgUrl" />
+    </label>
+    <br>
+    <label style="display: -webkit-box;">Platform Name
+      <input type="radio" formControlName="platformName" value='Switch'>Switch
+      <input type="radio" formControlName="platformName" value="N64">N64
+      <input type="radio" formControlName="platformName" value="XBOX">XBOX
+      <input type="radio" formControlName="platformName" value="PS4">PS4
     </label>
     <br>
     <label>Number of Hours to Complete

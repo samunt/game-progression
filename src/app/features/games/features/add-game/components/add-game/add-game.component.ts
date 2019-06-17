@@ -64,7 +64,7 @@ export class AddGameComponent  {
       id: new FormControl(''),
       name: new FormControl(''),
       imageURL: new FormControl(''),
-      platform: new FormControl(''),
+      platformName: new FormControl(''),
       numHrsComplete: new FormControl(''),
       priority: new FormControl(''),
       imgUrl: new FormControl('')

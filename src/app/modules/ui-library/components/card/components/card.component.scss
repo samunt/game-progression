@@ -1,11 +1,12 @@
 :host {
   .card {
-
+    height: 23rem;
+    border-radius: 5px;
+    background-color: #30495f;
+    width: 100%;
+    padding: 1rem;
+    margin: 0 2rem;
   }
-  //.card {
-  //  width: 33%;
-  //  height: 250px;
-  //}
 }
 :host:not(:first-of-type) {
   margin-left: 50px;
