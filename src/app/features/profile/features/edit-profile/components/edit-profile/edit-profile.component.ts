@@ -16,8 +16,9 @@ export class EditProfileComponent {
   public form: FormGroup;
   public profile: Profile;
   private namePattern = "^[a-zA-Z]{1,25}$";
-  private hoursPattern = "^[0-9]{1,5}$";
+  private hoursPattern = "^[1-9][0-9]*$";
   public submitted = false;
+
   @Input()
   public src: string = null;
 
@@ -97,10 +98,12 @@ export class EditProfileComponent {
 
   }
 
-  press() {
+  pressCancel(form: FormGroup) {
     this.clickedButton = this.clickedButton !== true;
     this.pressed.emit(this.clickedButton);
-    console.log(this.clickedButton, event);
+    if (form.dirty) {
+      alert('Just an FYI, you are moving on without saving...');
+    }
     if (this.clickedButton === false) {
       this.router.navigate(['/profile-details']);
     }
@@ -109,7 +112,6 @@ export class EditProfileComponent {
   get f() { return this.form.controls; }
   public submitForm(form: FormGroup) {
     this.submitted = true;
-    // stop here if form is invalid
     if (form.invalid) {
       return;
     }
@@ -119,5 +121,6 @@ export class EditProfileComponent {
     this.profile.lastName = this.form.controls.lastName.value;
     this.profile.avgNumHrs = this.form.controls.avgNumHrs.value;
     this.store.editProfileState(this.profile);
+    this.router.navigate(['/profile-details']);
   }
 }

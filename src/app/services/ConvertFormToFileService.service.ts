@@ -8,7 +8,7 @@ export class ConvertFormToFileServiceService {
         name: null,
         platform: null,
         platformName: null,
-        estCompleted: null,
+        numHrsComplete: null,
         imgUrl: null,
         priority: null,
         compDate: null

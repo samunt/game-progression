@@ -47,14 +47,4 @@ export class ProfileEffects {
         ),
     );
 
-    @Effect()
-    editProfileSuccess = this.actions$.pipe(
-        ofType(ProfileActions.EditProfileSuccess),
-        switchMap(() =>
-            this.router.navigate(['/profile-details']).then(
-            )
-         ),
-    );
-
-
 }

@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {GameStore} from "../../../../store/game.store";
 import {ActivatedRoute, Router} from "@angular/router";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {DataService} from "../../../../../../services";
 import * as _ from 'lodash';
@@ -23,6 +23,8 @@ export class EditGameComponent implements OnInit {
   private platformSubscription: Subscription;
   private platformList: Platform;
   private convertedGame: Game;
+  private hoursPattern = "^[1-9][0-9]*$";
+  public submitted = false;
 
   @Input()
   public src: string = null;
@@ -83,6 +85,7 @@ export class EditGameComponent implements OnInit {
 
   @Input()
   public cardMargin = '0 2rem';
+  private completed: boolean;
 
 
   constructor(public store: GameStore,
@@ -110,33 +113,49 @@ export class EditGameComponent implements OnInit {
         });
         gameToEdit = gameToEdit[0];
         this.game = gameToEdit;
+        console.log('GAME****', this.game);
         //apply values of game to form
+        // @ts-ignore
+        // @ts-ignore
+        this.completed = false;
         this.form = new FormGroup({
           id: new FormControl({value: gameId, disabled: true}),
-          name: new FormControl(this.game.name),
-          imageURL: new FormControl(this.game.imgUrl),
-          platformName: new FormControl(this.game.platformName),
-          numHrsComplete: new FormControl(this.game.estCompleted),
-          priority: new FormControl(this.game.priority)
+          name: new FormControl(this.game.name, Validators.compose(
+              [Validators.required]
+          )),
+          imageURL: new FormControl(this.game.imgUrl, Validators.compose(
+              [Validators.required]
+          )),
+          platformName: new FormControl(this.game.platformName, Validators.compose(
+              [Validators.required]
+          )),
+          numHrsComplete: new FormControl(this.game.numHrsComplete ? this.game.numHrsComplete : 0, Validators.compose(
+              [Validators.required, Validators.pattern(this.hoursPattern)]
+          )),
+          priority: new FormControl(this.game.priority, Validators.compose(
+              [Validators.required, Validators.pattern(this.hoursPattern)]
+          )),
+          complete: new FormControl(this.completed)
         });
+
       });
     });
   }
 
+  get f() { return this.form.controls; }
   submitForm(form: FormGroup) {
+    this.submitted = true;
     let platformId: number = null;
-
-    //get keys from form.control (which should match the Game type
-    //iterate over game keys
-    //map the form.control[key].value to the game with the same key
     let platformList = this.platformList;
+    //get keys from form.control (which should now match the Game type)
     this.convertedGame = this.convertForm.convertFormToGameType(form.controls);
     let game = this.convertedGame;
+    //iterate over game keys
     _.forEach(platformList, function(platform){
       platformId = game.platformName.toUpperCase() === platform.platform.toUpperCase() ? platform.id : false;
+      //map the form.control[key].value to the game with the same key
       game.platform = platformId
     });
-
     //dispatch action to update game
     this.store.updateGame(this.convertedGame);
     this.nav.navigate(['/list-games']);

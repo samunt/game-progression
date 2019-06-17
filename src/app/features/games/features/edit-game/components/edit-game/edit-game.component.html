@@ -26,23 +26,45 @@
         <label>Name
             <input formControlName="name" />
         </label>
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+        </div>
+
         <br>
         <label>Image URL
             <input formControlName="imageURL" />
         </label>
+        <div *ngIf="submitted && f.imageURL.errors" class="invalid-feedback">
+            <div *ngIf="f.imageURL.errors.required">Image URL is required</div>
+        </div>
+
         <br>
         <label>Platform Name
-            <input formControlName="platformName" />
+            <input type="radio" formControlName="platformName" value='Switch'>Switch
+            <input type="radio" formControlName="platformName" value="N64">N64
+            <input type="radio" formControlName="platformName" value="XBOX">XBOX
+            <input type="radio" formControlName="platformName" value="PS4">PS4
         </label>
+        <div *ngIf="submitted && f.platformName.errors" class="invalid-feedback">
+            <div *ngIf="f.platformName.errors.required">Platform Name is required</div>
+        </div>
+
         <br>
         <label>Number of Hours to Complete
             <input formControlName="numHrsComplete" />
         </label>
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Hours is required</div>
+            <div *ngIf="f.lastName.errors.pattern">Needs to be > 0</div>
+        </div>
         <br>
         <label>Priority
             <input formControlName="priority" />
         </label>
-
+        <br>
+        <label>Complete
+            <input type="checkbox" formControlName="complete" />
+        </label>
         <app-button (click)="submitForm(form)"
                     id="submit"
                     [bgColor]="bgColorSave"

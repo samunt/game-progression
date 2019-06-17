@@ -5,7 +5,7 @@
       "firstName": "sam",
       "lastName": "Unterman",
       "avatar": "https://avatarfiles.alphacoders.com/144/144986.jpg",
-      "avgNumHrs": "8",
+      "avgNumHrs": "999",
       "error": null
     }
   ],
@@ -14,13 +14,12 @@
       "id": "4kjxncvmfgujws5bkiv",
       "name": "Smash Bros",
       "platform": false,
-      "platformName": "switch",
-      "estCompleted": 100,
+      "platformName": "Switch",
+      "numHrsComplete": "88",
       "imgUrl": null,
       "priority": "21",
       "compDate": null,
-      "imageURL": null,
-      "numHrsComplete": null
+      "imageURL": "https://howlongtobeat.com/gameimages/42833_Super_Mario_Odyssey.jpg"
     }
   ],
   "platforms": [

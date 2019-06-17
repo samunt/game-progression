@@ -3,7 +3,7 @@ export interface Game {
     name: string;
     platform: number;
     platformName: string;
-    estCompleted: number;
+    numHrsComplete: number;
     imgUrl: string;
     priority: number;
     compDate: Date;
