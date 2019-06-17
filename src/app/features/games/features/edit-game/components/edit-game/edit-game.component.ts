@@ -143,7 +143,8 @@ export class EditGameComponent implements OnInit {
   }
 
   deleteForm(form: FormGroup) {
-    this.store.deleteGame(form.controls.id.value)
+    this.store.deleteGame(form.controls.id.value);
+    this.nav.navigate(['/list-games']);
   }
 
   pressCancel() {

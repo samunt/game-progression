@@ -74,6 +74,11 @@ export class ListGamesComponent {
     @Input()
     public color = 'navy';
 
+    @Input()
+    public position = 'relative';
+
+    @Input()
+    public left = '3rem';
 
     constructor(public dataService: DataService, public gameStore: GameStore, public router: Router) {
         this.platformSubscription = this.dataService.getPlatforms().subscribe(

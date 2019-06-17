@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Samuel",
+      "firstName": "sam",
       "lastName": "Unterman",
       "avatar": "https://avatarfiles.alphacoders.com/144/144986.jpg",
       "avgNumHrs": "8",
@@ -20,18 +20,6 @@
       "priority": "21",
       "compDate": null,
       "imageURL": null,
-      "numHrsComplete": null
-    },
-    {
-      "id": "7vbd795ss1cjwux034e",
-      "name": "",
-      "platform": "",
-      "platformName": null,
-      "estCompleted": 50,
-      "compDate": null,
-      "imgUrl": "",
-      "priority": null,
-      "imageURL": "",
       "numHrsComplete": null
     }
   ],

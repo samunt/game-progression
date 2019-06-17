@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '
 import {DataService} from "../../../../../../services";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { ProfileStore } from "../../../../store/profile.store";
 import {Profile} from "../../../../types/profile";
 
@@ -15,6 +15,8 @@ export class EditProfileComponent {
   subscription: Subscription;
   public form: FormGroup;
   public profile: Profile;
+  private namePattern = "^[a-z]{1,25}$";
+  private hoursPattern = "^[0-9]{1,5}$";
   @Input()
   public src: string = null;
 
@@ -82,10 +84,13 @@ export class EditProfileComponent {
       this.profile = profile[0];
       this.form = new FormGroup({
         id: new FormControl(this.profile.id),
-        firstName: new FormControl(this.profile.firstName),
-        lastName: new FormControl(this.profile.lastName),
-        avatar: new FormControl(this.profile.avatar),
-        avgNumHrs: new FormControl(this.profile.avgNumHrs)
+        firstName: new FormControl(this.profile.firstName, Validators.compose(
+            [Validators.pattern(this.namePattern), Validators.required])),
+        lastName: new FormControl(this.profile.lastName, Validators.compose(
+            [Validators.pattern(this.namePattern), Validators.required])),
+        avatar: new FormControl(this.profile.avatar, Validators.required),
+        avgNumHrs: new FormControl(this.profile.avgNumHrs,  Validators.compose(
+            [Validators.minLength(1), Validators.pattern(this.hoursPattern),  Validators.required]))
       });
     });
 
@@ -102,6 +107,10 @@ export class EditProfileComponent {
 
 
   public submitForm(form: FormGroup) {
+    // stop here if form is invalid
+    if (form.invalid) {
+      return;
+    }
     this.form = form;
     this.profile.avatar = this.form.controls.avatar.value;
     this.profile.firstName = this.form.controls.firstName.value;
