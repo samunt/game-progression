@@ -15,9 +15,9 @@
     top: 2rem;
   }
   #submit {
-    position: absolute;
-    right: 31rem;
-    top: 16rem;
+    position: relative;
+    left: 50%;
+    bottom: 35.4rem;
   }
   #cancel {
     position: relative;
@@ -25,9 +25,9 @@
     bottom: 3.5rem;
   }
   #delete {
-    position: absolute;
-    right: 18rem;
-    top: 16rem;
+    position: relative;
+    left: 54%;
+    bottom: 35.4rem;
   }
   label {
     color: white;

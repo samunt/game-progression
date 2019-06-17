@@ -11,6 +11,7 @@ export class ConvertFormToFileServiceService {
         numHrsComplete: null,
         imgUrl: null,
         priority: null,
+        hrsPlayed: null,
         compDate: null
     };
     public convertFormToGameType(formControlsFromRef) {

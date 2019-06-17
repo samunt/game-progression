@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
     styleUrls: ['list-games.component.scss']
 })
 export class ListGamesComponent {
-    public gameList: any;
+    public gameList: Array<Game>;
     public gameSubscription: any;
     public platformSubscription: any;
     public platformList: any;
@@ -80,6 +80,9 @@ export class ListGamesComponent {
     @Input()
     public left = '3rem';
 
+    @Input()
+    public picWidth = '9rem';
+
     constructor(public dataService: DataService, public gameStore: GameStore, public router: Router) {
         this.platformSubscription = this.dataService.getPlatforms().subscribe(
             platforms => {
@@ -87,6 +90,7 @@ export class ListGamesComponent {
             }
         );
         this.gameSubscription = this.dataService.getGames().subscribe(gameList => {
+            // @ts-ignore
             this.gameList = gameList;
             let platformList = this.platformList;
             _.forEach(this.gameList, function(game: Game){

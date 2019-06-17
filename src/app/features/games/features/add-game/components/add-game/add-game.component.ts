@@ -83,6 +83,7 @@ export class AddGameComponent  {
       name: null,
       platform: null,
       platformName: null,
+      hrsPlayed: null,
       numHrsComplete: null,
       compDate: null,
       imgUrl: null,

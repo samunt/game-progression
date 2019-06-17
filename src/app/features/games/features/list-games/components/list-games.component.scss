@@ -39,16 +39,20 @@
   .red {
     background-color: red;
     position: absolute;
-    height: 200px;
+    height: 50%;
   }
   .yellow {
     background-color: yellow;
     position: absolute;
-    height: 200px;
+    height: 50%;
   }
   .green {
     background-color: green;
     position: absolute;
-    height: 200px;
+    height: 50%;
+  }
+  img {
+    position: relative;
+    left: 50px;
   }
 }

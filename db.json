@@ -15,11 +15,24 @@
       "name": "Smash Bros",
       "platform": false,
       "platformName": "Switch",
-      "numHrsComplete": "88",
-      "imgUrl": null,
+      "hrsPlayed": 20,
+      "numHrsComplete": 88,
       "priority": "21",
       "compDate": null,
-      "imageURL": "https://howlongtobeat.com/gameimages/42833_Super_Mario_Odyssey.jpg"
+      "imgUrl": "https://howlongtobeat.com/gameimages/42833_Super_Mario_Odyssey.jpg",
+      "complete": false
+    },
+    {
+      "id": "4kjxncv87h8uiws5bkiv",
+      "name": "Mario Kart",
+      "platform": false,
+      "platformName": "N64",
+      "hrsPlayed": 2,
+      "numHrsComplete": 230,
+      "priority": "1",
+      "compDate": null,
+      "imgUrl": "https://howlongtobeat.com/gameimages/42833_Super_Mario_Odyssey.jpg",
+      "complete": false
     }
   ],
   "platforms": [
