@@ -27,18 +27,33 @@
     <label>First Name
       <input formControlName="firstName" />
     </label>
+    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+      <div *ngIf="f.firstName.errors.required">First Name is required</div>
+      <div *ngIf="f.firstName.errors.pattern">First Name can only be composed of letters!!!!!</div>
+    </div>
     <br>
     <label>Last Name
       <input formControlName="lastName" />
     </label>
+    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+      <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+      <div *ngIf="f.lastName.errors.pattern">Last Name can only be composed of letters!!!!!</div>
+    </div>
     <br>
     <label>Avatar
       <input formControlName="avatar" />
     </label>
+    <div *ngIf="submitted && f.avatar.errors" class="invalid-feedback">
+      <div *ngIf="f.avatarName.errors.required">Avatar URL is required</div>
+    </div>
     <br>
     <label>Avg Number of Hours
       <input formControlName="avgNumHrs" />
     </label>
+    <div *ngIf="submitted && f.avgNumHrs.errors" class="invalid-feedback">
+      <div *ngIf="f.avgNumHrs.errors.required">Average number of hours is required</div>
+      <div *ngIf="f.avgNumHrs.errors.pattern">Average number of hours must be a number</div>
+    </div>
     <br>
     <app-button (click)="submitForm(form)"
                 id="submit"

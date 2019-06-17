@@ -15,8 +15,9 @@ export class EditProfileComponent {
   subscription: Subscription;
   public form: FormGroup;
   public profile: Profile;
-  private namePattern = "^[a-z]{1,25}$";
+  private namePattern = "^[a-zA-Z]{1,25}$";
   private hoursPattern = "^[0-9]{1,5}$";
+  public submitted = false;
   @Input()
   public src: string = null;
 
@@ -90,7 +91,7 @@ export class EditProfileComponent {
             [Validators.pattern(this.namePattern), Validators.required])),
         avatar: new FormControl(this.profile.avatar, Validators.required),
         avgNumHrs: new FormControl(this.profile.avgNumHrs,  Validators.compose(
-            [Validators.minLength(1), Validators.pattern(this.hoursPattern),  Validators.required]))
+            [Validators.required, Validators.pattern(this.hoursPattern),  Validators.required]))
       });
     });
 
@@ -105,8 +106,9 @@ export class EditProfileComponent {
     }
   }
 
-
+  get f() { return this.form.controls; }
   public submitForm(form: FormGroup) {
+    this.submitted = true;
     // stop here if form is invalid
     if (form.invalid) {
       return;
